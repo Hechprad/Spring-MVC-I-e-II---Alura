@@ -4,6 +4,7 @@ Projeto realizado no primeiro curso de Spring MVC da Alura
 1:
   - jdk1.8.0_201 instalado
   - jre1.8.0_201 instalado
+  - Git instalado
   - MySQL 8.0.15 instalado
   - Apache-maven-3.6.0 instalado
   - Apache-tomcat-9.0.16 instalado
