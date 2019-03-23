@@ -20,7 +20,7 @@
         -> localhost:8080/casadocodigo/
 *****
 ## 3:
-Adicionando Dependencias do Maven necessárias para o projeto
+Adicionando Dependências do Maven necessárias para o projeto
 
   - spring-webmvc - 4.1.0.RELEASE
   - tomcat-servlet-api - 7.0.30
