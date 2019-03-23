@@ -14,3 +14,6 @@ Projeto realizado no primeiro curso de Spring MVC da Alura
   - Projeto criado com Jboss - Forge 3.9.2
         -> cmd - forge/bin/forge.bat = "project-new --named casadocodigo"
   - Projeto importado para o Eclipse como 'Existing Maven Project'
+  - Servidor Tomcat associado ao Eclipse e projeto 'casadocodigo' adicionado ao servidor local
+  - index.html criado na src\main\web\app para verificar o servidor online
+        -> localhost:8080/casadocodigo/
