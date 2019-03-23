@@ -21,7 +21,7 @@ Projeto realizado no primeiro curso de Spring MVC da Alura
 *****
 3:
   - Adicionando Dependencias do Maven necessárias para o projeto:
-        1. spring-webmvc - 4.1.0.RELEASE
+        1 - spring-webmvc - 4.1.0.RELEASE
         2. tomcat-servlet-api - 7.0.30
               2.1  <scope>provided</scope>
         3. javax.servlet.jsp-api - 2.2.1
@@ -39,7 +39,7 @@ Projeto realizado no primeiro curso de Spring MVC da Alura
               7.1  <scope>runtime</scope>
         8. slf4j-log4j12 - 1.6.1
               8.1  <scope>runtime</scope>
-        9. log4j - 1.2.16
-              9.1  <scope>runtime</scope>
+        -> log4j - 1.2.16
+              =>  <scope>runtime</scope>
 *****              
 
