@@ -21,15 +21,15 @@
 *****
 ## 3:
   - Adicionando Dependencias do Maven necessárias para o projeto:
-        1 - spring-webmvc - 4.1.0.RELEASE
-        2 - tomcat-servlet-api - 7.0.30
-              2.1 - <scope>provided</scope>
-        3 - javax.servlet.jsp-api - 2.2.1
-              3.1 - <scope>provided</scope>
-        4 - jstl-api - 1.2
-              4.1 - <exclusions>
-                   	<exclusion><groupId>javax.servlet</groupId><artifactId>servlet-api</artifactId></exclusion>
-                   </exclusions>
+        1. spring-webmvc - 4.1.0.RELEASE
+        2. tomcat-servlet-api - 7.0.30
+        	- <scope>provided</scope>
+        3. javax.servlet.jsp-api - 2.2.1
+		- <scope>provided</scope>
+        4. jstl-api - 1.2
+        	- <exclusions>
+                  	<exclusion><groupId>javax.servlet</groupId><artifactId>servlet-api</artifactId></exclusion>
+                  </exclusions>
         5 - jstl-impl - 1.2
               5.1 - <exclusions>
 			<exclusion><groupId>javax.servlet</groupId><artifactId>servlet-api</artifactId></exclusion>
