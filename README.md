@@ -24,23 +24,37 @@ Adicionando Dependencias do Maven necessárias para o projeto
 
   - spring-webmvc - 4.1.0.RELEASE
   - tomcat-servlet-api - 7.0.30
-	- <scope>provided</scope>
+  	```sh
+	<scope>provided</scope>
+	```
   - javax.servlet.jsp-api - 2.2.1
-	- <scope>provided</scope>
+  	```sh
+	<scope>provided</scope>
+	```
   - jstl-api - 1.2
-	- <exclusions>
+  	```sh
+	<exclusions>
 		<exclusion><groupId>javax.servlet</groupId><artifactId>servlet-api</artifactId></exclusion>
 	</exclusions>
+	```
   - jstl-impl - 1.2
-	- <exclusions>
+  	```sh
+	<exclusions>
 		<exclusion><groupId>javax.servlet</groupId><artifactId>servlet-api</artifactId></exclusion>
 	</exclusions>
+	```
   - slf4j-api - 1.6.1
   - jcl-over-slf4j - 1.6.1
-	- <scope>runtime</scope>
+  	```sh
+	<scope>runtime</scope>
+	```
   - slf4j-log4j12 - 1.6.1
-	- <scope>runtime</scope>
+  	```sh
+	<scope>runtime</scope>
+	```
   - log4j - 1.2.16
-	- <scope>runtime</scope>
+  	```sh
+	<scope>runtime</scope>
+	```
 *****              
 
