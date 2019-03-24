@@ -1,4 +1,4 @@
-# Spring-MVCI---Alura
+# Spring-MVC-I---Alura
 ## Projeto realizado no primeiro curso de Spring MVC da Alura
 *****
 ## 1:
