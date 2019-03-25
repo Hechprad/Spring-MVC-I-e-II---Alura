@@ -23,6 +23,7 @@ tr:nth-child(even) {
 </head>
 <body>
 	<h1>Casa do Código</h1>
+	<a href="produtos/form">Cadastrar</a>
 	<table>
 		<tr>
 			<td>Java 8 Prático</td>
