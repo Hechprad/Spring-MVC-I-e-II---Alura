@@ -22,7 +22,7 @@ tr:nth-child(even) {
 <title>Livros de Java, Android, iPhone, Ruby, PHP e muito mais - Casa do Código</title>
 </head>
 <body>
-	<h1>Casa do Código</h1>
+	<h2>Casa do Código</h2>
 	<a href="produtos/form">Cadastrar</a>
 	<table>
 		<tr>
