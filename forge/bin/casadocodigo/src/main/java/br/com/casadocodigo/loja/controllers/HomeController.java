@@ -12,7 +12,7 @@ public class HomeController {
 	@RequestMapping("/") 	//Mapeamento do request do usuário
 	public String index() {	//Retorna a página inicial do nosso projeto
 		System.out.println("Entrando na home da CDC");
-		return "home.jsp";
+		return "home";
 	}
 	
 }
