@@ -1,6 +1,9 @@
 # 📌Spring-MVC-I---Alura
+***
 ## Projeto realizado no primeiro curso de Spring MVC da Alura
-*****
+***
+### Configurações iniciais
+
 ## 1:
   - jdk1.8.0_201 instalado
   - jre1.8.0_201 instalado
@@ -8,7 +11,7 @@
   - MySQL 8.0.15 instalado
   - Apache-maven-3.6.0 instalado
   - Apache-tomcat-9.0.16 instalado
-*****
+***
 ## 2:  
   - Repositório criado no git
   - Repositório clonado no Eclipse
@@ -18,7 +21,7 @@
   - Servidor Tomcat associado ao Eclipse e projeto 'casadocodigo' adicionado ao servidor local
   - index.html criado na src\main\web\app para verificar o servidor online
         -> localhost:8080/casadocodigo/
-*****
+***
 ## 3:
 Adicionando Dependências do Maven necessárias para o projeto👓
 
@@ -56,5 +59,5 @@ Adicionando Dependências do Maven necessárias para o projeto👓
   	```sh
 	<scope>runtime</scope>
 	```
-*****              
+***          
 
