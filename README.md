@@ -1,4 +1,4 @@
-# Spring-MVC-I---Alura
+# Spring-MVC-I---Alura📌
 ## Projeto realizado no primeiro curso de Spring MVC da Alura
 *****
 ## 1:
@@ -20,7 +20,7 @@
         -> localhost:8080/casadocodigo/
 *****
 ## 3:
-Adicionando Dependências do Maven necessárias para o projeto
+Adicionando Dependências do Maven necessárias para o projeto👓
 
   - spring-webmvc - 4.1.0.RELEASE
   - tomcat-servlet-api - 7.0.30
