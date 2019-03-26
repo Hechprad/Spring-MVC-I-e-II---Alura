@@ -1,6 +1,7 @@
 # 📌Spring-MVC-I---Alura
 ***
-## Projeto realizado no primeiro curso de Spring MVC da Alura (Site de uma loja de livros)
+## Projeto realizado no primeiro curso de Spring MVC da Alura 
+(Site de uma loja de livros)
 ***
 ### Configurações iniciais
 
