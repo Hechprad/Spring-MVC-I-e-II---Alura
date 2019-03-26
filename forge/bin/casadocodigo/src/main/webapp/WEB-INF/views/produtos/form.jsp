@@ -8,7 +8,7 @@
 </head>
 <body>
 
-<form action="/produtos" method="POST">
+<form action="/casadocodigo/produtos" method="POST">
 	<div>
 		<label>Título</label>
 		<br>
