@@ -17,7 +17,7 @@ public class ProdutosController {
 	public String grava(Produto produto) {
 		System.out.println(produto.toString());
 		
-		return "ok";
+		return "produtos/ok";
 	}
 	
 }
