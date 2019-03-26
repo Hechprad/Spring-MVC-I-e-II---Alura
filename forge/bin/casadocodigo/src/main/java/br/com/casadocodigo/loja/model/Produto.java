@@ -1,5 +1,8 @@
 package br.com.casadocodigo.loja.model;
 
+import javax.persistence.Entity;
+
+@Entity	//Annotation da JPA
 public class Produto {
 
 	private String titulo;
