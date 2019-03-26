@@ -60,5 +60,11 @@ Adicionando Dependências do Maven necessárias para o projeto👓
   	```sh
 	<scope>runtime</scope>
 	```
+Dependências JPA
+  - hibernate-entitymanager - 4.3.0.Final
+  - hibernate-core - 4.3.0.Final
+  - hibernate-jpa-2.1-api - 1.0.0.Final
+  - spring-orm - 4.1.0.RELEASE
+  - mysql-connector-java - 5.1.15
 ***          
 
