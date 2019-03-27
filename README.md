@@ -65,6 +65,6 @@ Dependências JPA
   - hibernate-core - 4.3.0.Final
   - hibernate-jpa-2.1-api - 1.0.0.Final
   - spring-orm - 4.1.0.RELEASE
-  - mysql-connector-java - 5.1.15
+  - mysql-connector-java - 8.0.15
 ***          
 
