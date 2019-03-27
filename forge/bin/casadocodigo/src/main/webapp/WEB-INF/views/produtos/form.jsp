@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,16 +26,14 @@
 		<input type="text" name="paginas">
 	</div>
 	<br>
-	<div>
-		<label>Preço E-book</label>
-		<input type="text" name="ebook">
-	
-		<label> Preço Impresso</label>
-		<input type="text" name="impresso">
-	
-		<label> Preço Combo</label>
-		<input type="text" name="combo">
-	</div>
+	<c:forEach items="${tipos}" var="tipoPreco" varStatus="status">
+		<div>
+			<label>${tipoPreco}</label>
+			<br>
+			<input type="text" name="precos[${status.index}].valor">
+			<input type="hidden" name="precos[${status.index}].tipo">
+		</div>
+	</c:forEach>
 	<br>
 	<button type="submit">Cadastrar</button><br>
 </form>
