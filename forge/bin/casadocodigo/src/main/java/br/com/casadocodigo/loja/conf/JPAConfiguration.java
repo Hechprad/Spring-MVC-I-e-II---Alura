@@ -31,7 +31,7 @@ public class JPAConfiguration {
 		dataSource.setUsername("root");
 		dataSource.setPassword("root");
 		dataSource.setUrl("jdbc:mysql://localhost:3306/casadocodigo?useTimezone=true&serverTimezone=UTC");	//endereço do BD com "?useTimezone=true&serverTimezone=UTC" para evitar conflito de horário
-		dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");	//"cj" adicionado para versão mais recendo do driver 
+		dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");	//"cj" adicionado para ser versão mais recente do driver 
 		
 		factoryBean.setDataSource(dataSource);
 		
