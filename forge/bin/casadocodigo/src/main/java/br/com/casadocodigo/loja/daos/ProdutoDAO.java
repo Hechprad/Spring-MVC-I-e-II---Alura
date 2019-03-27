@@ -2,12 +2,14 @@ package br.com.casadocodigo.loja.daos;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Repository;
 
 import br.com.casadocodigo.loja.model.Produto;
 
 @Repository	//Fazendo o spring conhecer o "ProdutoDAO" para injetar no "ProdutosController", repository vai mapear o ProdutoDAO
+@Transactional
 public class ProdutoDAO {
 
 	@PersistenceContext	//O spring coloca o entity manager aqui com a annotation
