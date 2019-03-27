@@ -10,11 +10,13 @@ import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.JpaVendorAdapter;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 /**
  * @author Hech
  * Classe que configura o entityManager, e passa as informações para
  * acessar o BD
  */
+@EnableTransactionManagement
 public class JPAConfiguration {
 
 	@Bean
@@ -28,8 +30,8 @@ public class JPAConfiguration {
 		DriverManagerDataSource dataSource = new DriverManagerDataSource();
 		dataSource.setUsername("root");
 		dataSource.setPassword("root");
-		dataSource.setUrl("jdbc:mysql://localhost:3306/casadocodigo");
-		dataSource.setDriverClassName("com.mysql.jdbc.Driver");
+		dataSource.setUrl("jdbc:mysql://localhost:3306/casadocodigo?useTimezone=true&serverTimezone=UTC");	//endereço do BD com "?useTimezone=true&serverTimezone=UTC" para evitar conflito de horário
+		dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");	//"cj" adicionado para versão mais recendo do driver 
 		
 		factoryBean.setDataSource(dataSource);
 		
@@ -39,7 +41,7 @@ public class JPAConfiguration {
 		props.setProperty("hibernate.hbm2ddl.auto", "update");	//Sempre que mudarmos uma propriedade o hibernate gerencia e faz um update automático
 		factoryBean.setJpaProperties(props);
 		
-		factoryBean.setPackagesToScan("br.com.casadocodigo.loja.models");
+		factoryBean.setPackagesToScan("br.com.casadocodigo.loja.model");
 		
 		return factoryBean;
 	}

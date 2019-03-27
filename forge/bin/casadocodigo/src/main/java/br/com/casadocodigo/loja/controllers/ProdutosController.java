@@ -10,7 +10,7 @@ import br.com.casadocodigo.loja.model.Produto;
 @Controller
 public class ProdutosController {
 
-	@Autowired	//Injeção de dependências - Spring Injeta
+	@Autowired	//Injeção de dependências - Spring Injeta. @AutoWired indica ao Spring que o objeto anotado é um Bean dele e que queremos que ele nos dê uma instância por meio do recurso de injeção de dependência.
 	private ProdutoDAO produtoDao;
 	
 	@RequestMapping("/produtos/form")
