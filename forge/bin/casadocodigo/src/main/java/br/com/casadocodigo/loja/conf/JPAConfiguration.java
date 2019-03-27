@@ -41,7 +41,7 @@ public class JPAConfiguration {
 		props.setProperty("hibernate.hbm2ddl.auto", "update");	//Sempre que mudarmos uma propriedade o hibernate gerencia e faz um update automático
 		factoryBean.setJpaProperties(props);
 		
-		factoryBean.setPackagesToScan("br.com.casadocodigo.loja.model");
+		factoryBean.setPackagesToScan("br.com.casadocodigo.loja.models");
 		
 		return factoryBean;
 	}

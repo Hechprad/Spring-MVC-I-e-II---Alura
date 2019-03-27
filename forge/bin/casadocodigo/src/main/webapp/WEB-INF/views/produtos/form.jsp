@@ -25,6 +25,17 @@
 		<input type="text" name="paginas">
 	</div>
 	<br>
+	<div>
+		<label>Preço E-book</label>
+		<input type="text" name="ebook">
+	
+		<label> Preço Impresso</label>
+		<input type="text" name="impresso">
+	
+		<label> Preço Combo</label>
+		<input type="text" name="combo">
+	</div>
+	<br>
 	<button type="submit">Cadastrar</button><br>
 </form>
 

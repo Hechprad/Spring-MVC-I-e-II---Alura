@@ -5,7 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import br.com.casadocodigo.loja.daos.ProdutoDAO;
-import br.com.casadocodigo.loja.model.Produto;
+import br.com.casadocodigo.loja.models.Produto;
 
 @Controller
 public class ProdutosController {
