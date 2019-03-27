@@ -9,6 +9,10 @@
 <body>
 
 	<h1>Produto cadastrado com sucesso!</h1>
+	<br>
+	<a href="/casadocodigo">HOME</a>
+	<br>
+	<a href="produtos/form">Cadastrar novo produto</a>
 
 </body>
 </html>
