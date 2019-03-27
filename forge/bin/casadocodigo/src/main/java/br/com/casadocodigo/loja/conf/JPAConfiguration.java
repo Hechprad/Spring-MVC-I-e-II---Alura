@@ -15,7 +15,7 @@ import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 public class JPAConfiguration {
 
 	@Bean
-	public void entityManagerFactory() {
+	public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
 		LocalContainerEntityManagerFactoryBean factoryBean = 
 				new LocalContainerEntityManagerFactoryBean();
 		
@@ -37,6 +37,8 @@ public class JPAConfiguration {
 		factoryBean.setJpaProperties(props);
 		
 		factoryBean.setPackagesToScan("br.com.casadocodigo.loja.models");
+		
+		return factoryBean;
 	}
 	
 }
