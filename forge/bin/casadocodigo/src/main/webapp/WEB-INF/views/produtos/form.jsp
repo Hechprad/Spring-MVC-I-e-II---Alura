@@ -28,10 +28,10 @@
 	<br>
 	<c:forEach items="${tipos}" var="tipoPreco" varStatus="status">
 		<div>
+			<input type="hidden" name="precos[${status.index}].tipo" value="${tipoPreco}">
 			<label>${tipoPreco}</label>
 			<br>
 			<input type="text" name="precos[${status.index}].valor">
-			<input type="hidden" name="precos[${status.index}].tipo">
 		</div>
 	</c:forEach>
 	<br>
