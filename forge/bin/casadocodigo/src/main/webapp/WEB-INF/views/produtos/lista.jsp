@@ -43,7 +43,5 @@ tr:nth-child(even) {
 	<a href="/casadocodigo">HOME</a>
 	<br>
 	<a href="produtos/form">Cadastrar novo produto</a>
-	<br>
-	<a href="produtos">Listar Produtos</a>
 </body>
 </html>
