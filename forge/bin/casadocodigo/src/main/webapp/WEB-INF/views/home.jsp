@@ -24,6 +24,7 @@ tr:nth-child(even) {
 <body>
 	<h2>Casa do Código</h2>
 	<a href="produtos/form">Cadastrar</a>
+	<a href="produtos">Listar Produtos</a>
 	<br>
 	<table>
 		<tr>

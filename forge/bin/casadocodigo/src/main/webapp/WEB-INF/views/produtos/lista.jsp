@@ -9,7 +9,7 @@
 table {
   font-family: arial, sans-serif;
   border-collapse: collapse;
-  width: 20%;
+  width: 40%;
 }
 td, th {
   border: 1px solid #dddddd;
@@ -23,15 +23,15 @@ tr:nth-child(even) {
 <title>Livros de Java, Android, iPhone, Ruby, PHP e muito mais - Casa do Código</title>
 </head>
 <body>
-
+	<h1>Lista de Produtos</h1>
+	<br>
 	<table>
 		<tr>
 			<td>Título</td>
 			<td>Descrição</td>
 			<td>Páginas</td>
-			<td></td>
 		</tr>
-		<c:forEach items="${produtos} var="produto">
+		<c:forEach items="${produtos}" var="produto">
 			<tr>
 				<td>${produto.titulo}</td>		
 				<td>${produto.descricao}</td>		
@@ -39,6 +39,9 @@ tr:nth-child(even) {
 			</tr>
 		</c:forEach>
 	</table>
-
+	<br>
+	<a href="/casadocodigo">HOME</a>
+	<br>
+	<a href="produtos/form">Cadastrar novo produto</a>
 </body>
 </html>
