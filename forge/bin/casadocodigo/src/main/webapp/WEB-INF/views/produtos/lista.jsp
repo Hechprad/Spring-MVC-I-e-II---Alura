@@ -31,7 +31,7 @@ tr:nth-child(even) {
 			<td>Páginas</td>
 			<td></td>
 		</tr>
-		<c:forEach items="${produtos} var="produto" >
+		<c:forEach items="${produtos} var="produto">
 			<tr>
 				<td>${produto.titulo}</td>		
 				<td>${produto.descricao}</td>		
