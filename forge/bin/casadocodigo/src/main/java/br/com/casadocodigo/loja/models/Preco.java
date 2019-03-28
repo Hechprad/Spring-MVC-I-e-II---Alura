@@ -22,4 +22,8 @@ public class Preco {
 	public void setTipo(TipoPreco tipo) {
 		this.tipo = tipo;
 	}
+	
+	public String toString() {
+		return "Valor: " + valor + " - Tipo: " + tipo;
+	};
 }

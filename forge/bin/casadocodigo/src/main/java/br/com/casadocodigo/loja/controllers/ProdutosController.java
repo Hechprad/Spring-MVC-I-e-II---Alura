@@ -26,6 +26,7 @@ public class ProdutosController {
 	@RequestMapping("/produtos")
 	public String gravar(Produto produto) {	//Recebe objeto produto do form.jsp de cadastro
 		System.out.println(produto.toString());
+		System.out.println(produto.getPrecos().toString());
 		produtoDao.gravar(produto);	//persistindo o produto no banco
 		return "produtos/ok";
 	}
