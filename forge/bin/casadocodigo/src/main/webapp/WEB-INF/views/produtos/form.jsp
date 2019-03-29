@@ -12,25 +12,25 @@
 
 <form action="/casadocodigo/produtos" method="POST">
 	<div>
-		<form:errors path="produto.titulo" cssStyle="font-size: 20px; color: red;"/>
-		<br>
 		<label>Título</label>
 		<br>
 		<input type="text" name="titulo">
+		<br>
+		<form:errors path="produto.titulo" cssStyle="font-size: 20px; color: red;"/>
 	</div>
 	<div>
-		<form:errors path="produto.descricao" cssStyle="font-size: 20px; color: red;"/>
-		<br>
 		<label>Descrição</label>
 		<br>
 		<textarea rows="10" cols="20" name="descricao"></textarea>
+		<br>
+		<form:errors path="produto.descricao" cssStyle="font-size: 20px; color: red;"/>
 	</div>
 	<div>
-		<form:errors path="produto.paginas" cssStyle="font-size: 20px; color: red;"/>
-		<br>
 		<label>Páginas</label>
 		<br>
 		<input type="text" name="paginas">
+		<br>
+		<form:errors path="produto.paginas" cssStyle="font-size: 20px; color: red;"/>
 	</div>
 	<br>
 	<c:forEach items="${tipos}" var="tipoPreco" varStatus="status">
