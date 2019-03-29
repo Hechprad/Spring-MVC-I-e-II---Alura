@@ -28,11 +28,11 @@ public class ProdutosController {
 	}
 	
 	@RequestMapping(method=RequestMethod.POST)
-	public String gravar(Produto produto) {	//Recebe objeto produto do form.jsp de cadastro
+	public ModelAndView gravar(Produto produto) {	//Recebe objeto produto do form.jsp de cadastro
 		System.out.println(produto.toString());
 		System.out.println(produto.getPrecos().toString());
 		produtoDao.gravar(produto);	//persistindo o produto no banco
-		return "produtos/ok";
+		return new ModelAndView("redirect:produtos");	//Always redirect after POST
 	}
 	
 	@RequestMapping(method=RequestMethod.GET)
