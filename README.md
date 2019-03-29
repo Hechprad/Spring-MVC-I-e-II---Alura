@@ -66,5 +66,9 @@ Dependências JPA
   - hibernate-jpa-2.1-api - 1.0.0.Final
   - spring-orm - 4.1.0.RELEASE
   - mysql-connector-java - 8.0.15
+  
+Dependências de Validação de Dados
+  - validation-api - 1.0.0.GA
+  - hibernate-validator - 4.2.0.Final
 ***          
 
