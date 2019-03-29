@@ -17,14 +17,14 @@
 		<br>
 		<label>Título</label>
 		<br>
-		<input type="text" name="titulo">
+		<form:input path="titulo"/>
 	</div>
 	<div>
 		<form:errors path="descricao" cssStyle="font-size: 20px; color: red;"/>
 		<br>
 		<label>Descrição</label>
 		<br>
-		<textarea rows="10" cols="20" name="descricao"></textarea>
+		<form:textarea rows="10" cols="20" path="descricao"/>
 		<br>
 	</div>
 	<div>
@@ -32,16 +32,24 @@
 		<br>
 		<label>Páginas</label>
 		<br>
-		<input type="text" name="paginas">
+		<form:input path="paginas"/>
+		<br>
+	</div>
+	<div>
+		<form:errors path="dataLancamento" cssStyle="font-size: 20px; color: red;"/>
+		<br>
+		<label>Data de Lançamento</label>
+		<br>
+		<form:input path="dataLancamento" placeholder="dd/mm/yyyy"/>
 		<br>
 	</div>
 	<br>
 	<c:forEach items="${tipos}" var="tipoPreco" varStatus="status">
 		<div>
-			<input type="hidden" name="precos[${status.index}].tipo" value="${tipoPreco}">
+			<form:hidden path="precos[${status.index}].tipo" value="${tipoPreco}"/>
 			<label>${tipoPreco}</label>
 			<br>
-			<input type="text" name="precos[${status.index}].valor">
+			<form:input path="precos[${status.index}].valor"/>
 		</div>
 	</c:forEach>
 	<br>

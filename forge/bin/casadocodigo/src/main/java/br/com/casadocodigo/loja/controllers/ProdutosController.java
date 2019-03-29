@@ -33,7 +33,7 @@ public class ProdutosController {
 	}
 	
 	@RequestMapping("form")
-	public ModelAndView form() {
+	public ModelAndView form(Produto produto) {
 		ModelAndView modelAndView = new ModelAndView("produtos/form");	//objeto do Spring, usamos no lugar do request
 		modelAndView.addObject("tipos", TipoPreco.values());
 		
@@ -45,7 +45,7 @@ public class ProdutosController {
 			RedirectAttributes redirectAttributes) {	//Recebe objeto produto do form.jsp de cadastro, result valida
 		
 		if(result.hasErrors()) {
-			return form();
+			return form(produto);
 		}
 		
 		produtoDao.gravar(produto);	//persistindo o produto no banco
