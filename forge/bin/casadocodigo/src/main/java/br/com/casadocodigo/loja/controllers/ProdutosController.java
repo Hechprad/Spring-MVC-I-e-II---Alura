@@ -20,7 +20,7 @@ import br.com.casadocodigo.loja.models.TipoPreco;
 import br.com.casadocodigo.loja.validation.ProdutoValidation;
 
 @Controller
-@RequestMapping("produtos") // Todos os métodos desta classe pegam produto
+@RequestMapping("/produtos") // Todos os métodos desta classe pegam produto
 public class ProdutosController {
 
 	@Autowired	//Injeção de dependências - Spring Injeta. @AutoWired indica ao Spring que o objeto anotado é um Bean dele e que queremos que ele nos dê uma instância por meio do recurso de injeção de dependência.
