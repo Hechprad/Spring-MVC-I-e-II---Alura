@@ -13,12 +13,13 @@ import br.com.casadocodigo.loja.models.Produto;
 import br.com.casadocodigo.loja.models.TipoPreco;
 
 @Controller
+@RequestMapping("produtos") // Todos os métodos desta classe pegam produto
 public class ProdutosController {
 
 	@Autowired	//Injeção de dependências - Spring Injeta. @AutoWired indica ao Spring que o objeto anotado é um Bean dele e que queremos que ele nos dê uma instância por meio do recurso de injeção de dependência.
 	private ProdutoDAO produtoDao;
 	
-	@RequestMapping("/produtos/form")
+	@RequestMapping("/form")
 	public ModelAndView form() {
 		ModelAndView modelAndView = new ModelAndView("produtos/form");	//objeto do Spring, usamos no lugar do request
 		modelAndView.addObject("tipos", TipoPreco.values());
@@ -26,7 +27,7 @@ public class ProdutosController {
 		return modelAndView;
 	}
 	
-	@RequestMapping(value="/produtos", method=RequestMethod.POST)
+	@RequestMapping(method=RequestMethod.POST)
 	public String gravar(Produto produto) {	//Recebe objeto produto do form.jsp de cadastro
 		System.out.println(produto.toString());
 		System.out.println(produto.getPrecos().toString());
@@ -34,10 +35,10 @@ public class ProdutosController {
 		return "produtos/ok";
 	}
 	
-	@RequestMapping(value="/produtos", method=RequestMethod.GET)
+	@RequestMapping(method=RequestMethod.GET)
 	public ModelAndView listar() {
 		List<Produto> produtos = produtoDao.listar();
-		System.out.println(produtos.toString());
+		//System.out.println(produtos.toString());
 		ModelAndView modelAndView = new ModelAndView("produtos/lista");
 		modelAndView.addObject("produtos", produtos);
 		
