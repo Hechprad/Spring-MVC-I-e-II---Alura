@@ -34,7 +34,7 @@ public class AppWebConfiguration {
 			= new ReloadableResourceBundleMessageSource();
 		messageSource.setBasename("WEB-INF/message");
 		messageSource.setDefaultEncoding("UTF-8");
-		messageSource.setCacheSeconds(10);
+		messageSource.setCacheSeconds(1);
 		
 		return messageSource;
 	}
