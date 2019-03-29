@@ -25,6 +25,8 @@ tr:nth-child(even) {
 <body>
 	<h1>Lista de Produtos</h1>
 	<br>
+	<div style="font-size: 30px; color: green;">${sucesso}</div>
+	<br>
 	<table>
 		<tr>
 			<td>Título</td>
