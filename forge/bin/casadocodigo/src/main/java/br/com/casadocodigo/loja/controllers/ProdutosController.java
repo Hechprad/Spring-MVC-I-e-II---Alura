@@ -29,9 +29,8 @@ public class ProdutosController {
 	}
 	
 	@RequestMapping(method=RequestMethod.POST)
-	public ModelAndView gravar(Produto produto, RedirectAttributes redirectAttributes) {	//Recebe objeto produto do form.jsp de cadastro
-		System.out.println(produto.toString());
-		//System.out.println(produto.getPrecos().toString());
+	public ModelAndView gravar(@valid Produto produto, RedirectAttributes redirectAttributes) {	//Recebe objeto produto do form.jsp de cadastro
+		
 		produtoDao.gravar(produto);	//persistindo o produto no banco
 		
 		redirectAttributes.addFlashAttribute("sucesso", "Produto cadastrado com sucesso!");

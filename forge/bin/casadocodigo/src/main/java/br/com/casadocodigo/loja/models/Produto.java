@@ -16,7 +16,7 @@ public class Produto {
 	
 	private String titulo;
 	private String descricao;
-	private int paginas;
+	private int paginas;	//Primitivo não pode ser null
 	
 	@ElementCollection	//Adiciona o preço como parte dos produtos em uma tabela diferente
 	private List<Preco> precos;
