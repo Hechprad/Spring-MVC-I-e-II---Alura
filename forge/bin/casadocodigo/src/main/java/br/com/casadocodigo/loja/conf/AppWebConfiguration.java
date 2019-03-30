@@ -45,7 +45,7 @@ public class AppWebConfiguration {
 	
 	//método para formatar as variáveis do tipo Calendar/data
 	@Bean
-	public FormattingConversionService mvcConsersionService() {
+	public FormattingConversionService mvcConversionService() {
 		DefaultFormattingConversionService conversionService 
 			= new DefaultFormattingConversionService();
 		DateFormatterRegistrar registrar = new DateFormatterRegistrar();
