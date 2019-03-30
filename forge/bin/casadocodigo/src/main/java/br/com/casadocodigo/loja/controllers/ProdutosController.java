@@ -16,6 +16,7 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import br.com.casadocodigo.loja.daos.ProdutoDAO;
+import br.com.casadocodigo.loja.infra.FileSaver;
 import br.com.casadocodigo.loja.models.Produto;
 import br.com.casadocodigo.loja.models.TipoPreco;
 import br.com.casadocodigo.loja.validation.ProdutoValidation;
@@ -26,6 +27,9 @@ public class ProdutosController {
 
 	@Autowired	//Injeção de dependências - Spring Injeta. @AutoWired indica ao Spring que o objeto anotado é um Bean dele e que queremos que ele nos dê uma instância por meio do recurso de injeção de dependência.
 	private ProdutoDAO produtoDao;
+	
+	@Autowired
+	private FileSaver fileSaver;
 	
 	@InitBinder
 	public void initBinder(WebDataBinder binder) {
@@ -45,12 +49,12 @@ public class ProdutosController {
 	public ModelAndView gravar(MultipartFile sumario, @Valid Produto produto, BindingResult result, 
 			RedirectAttributes redirectAttributes) {	//Recebe objeto produto do form.jsp de cadastro, result valida
 		
-		System.out.println(sumario.getOriginalFilename());
-		
 		if(result.hasErrors()) {
 			return form(produto);
 		}
 		
+		String path = fileSaver.write("arquivos-sumario", sumario);
+		produto.setSumarioPath(path);
 		produtoDao.gravar(produto);	//persistindo o produto no banco
 		
 		redirectAttributes.addFlashAttribute("sucesso", "Produto cadastrado com sucesso!");

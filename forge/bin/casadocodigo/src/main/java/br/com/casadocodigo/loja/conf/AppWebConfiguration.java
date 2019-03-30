@@ -15,6 +15,7 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 import br.com.casadocodigo.loja.controllers.HomeController;
 import br.com.casadocodigo.loja.daos.ProdutoDAO;
+import br.com.casadocodigo.loja.infra.FileSaver;
 
 /**
  * @author Hech
@@ -22,7 +23,8 @@ import br.com.casadocodigo.loja.daos.ProdutoDAO;
  */
 
 @EnableWebMvc	//Spring annotation - Configurações iniciais, habilitando o uso do Spring MVC
-@ComponentScan(basePackageClasses= {HomeController.class, ProdutoDAO.class})	//Mostrando quais as classes de controle
+@ComponentScan(basePackageClasses= {HomeController.class, ProdutoDAO.class,
+		FileSaver.class})	//Mostrando quais as classes de controle
 public class AppWebConfiguration {
 	
 	@Bean
