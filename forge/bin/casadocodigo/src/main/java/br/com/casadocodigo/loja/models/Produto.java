@@ -27,6 +27,8 @@ public class Produto {
 	@ElementCollection	//Adiciona o preço como parte dos produtos em uma tabela diferente
 	private List<Preco> precos;
 	
+	private String sumarioPath;
+	
 	public int getId() {
 		return id;
 	}
@@ -66,6 +68,12 @@ public class Produto {
 	@Override
 	public String toString() {
 		return "Produto [Título = " + titulo + ", descrição = " + descricao + ", páginas = " + paginas + "]";
+	}
+	public String getSumarioPath() {
+		return sumarioPath;
+	}
+	public void setSumarioPath(String sumarioPath) {
+		this.sumarioPath = sumarioPath;
 	}
 
 }

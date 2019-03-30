@@ -11,7 +11,8 @@
 </head>
 <body>
 <!-- action="${s:mvcUrl('PC#gravar').build()}" pega o método gravar do ProdutoController -->
-<form:form action="${s:mvcUrl('PC#gravar').build()}" method="POST" commandName="produto">
+<form:form action="${s:mvcUrl('PC#gravar').build()}" method="POST" 
+		commandName="produto" enctype="multipart/form-data">
 	<div>
 		<form:errors path="titulo" cssStyle="font-size: 20px; color: red;"/>
 		<br>
@@ -52,6 +53,12 @@
 			<form:input path="precos[${status.index}].valor"/>
 		</div>
 	</c:forEach>
+	<br>
+	<div>
+		<label>Sumário</label>
+		<br>
+		<input name="sumario" type="file">
+	</div>
 	<br>
 	<button type="submit">Cadastrar</button><br>
 </form:form>
