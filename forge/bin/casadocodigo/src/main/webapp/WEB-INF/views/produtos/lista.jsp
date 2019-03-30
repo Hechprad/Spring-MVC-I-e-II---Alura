@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -29,15 +30,19 @@ tr:nth-child(even) {
 	<br>
 	<table>
 		<tr>
+			<td>ID do Livro</td>
 			<td>Título</td>
 			<td>Descrição</td>
 			<td>Páginas</td>
+			<td>Data de Lançamento</td>
 		</tr>
 		<c:forEach items="${produtos}" var="produto">
 			<tr>
-				<td>${produto.titulo}</td>		
+				<td>${produto.id}</td>	
+				<td>${produto.titulo}</td>	
 				<td>${produto.descricao}</td>		
-				<td>${produto.paginas}</td>		
+				<td>${produto.paginas}</td>	
+				<td><fmt:formatDate pattern="dd/MM/yyyy" value="${produto.dataLancamento.time}"/></td>	
 			</tr>
 		</c:forEach>
 	</table>
