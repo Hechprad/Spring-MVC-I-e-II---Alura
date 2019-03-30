@@ -63,6 +63,7 @@ public class Produto {
 		return dataLancamento;
 	}
 	public void setDataLancamento(Calendar dataLancamento) {
+		dataLancamento.set(Calendar.HOUR_OF_DAY, 0);
 		this.dataLancamento = dataLancamento;
 	}
 	@Override
