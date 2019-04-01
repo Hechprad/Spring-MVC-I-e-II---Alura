@@ -11,6 +11,8 @@ import org.springframework.format.support.FormattingConversionService;
 import org.springframework.web.multipart.MultipartResolver;
 import org.springframework.web.multipart.support.StandardServletMultipartResolver;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 import br.com.casadocodigo.loja.controllers.HomeController;
@@ -23,9 +25,8 @@ import br.com.casadocodigo.loja.infra.FileSaver;
  */
 
 @EnableWebMvc	//Spring annotation - Configurações iniciais, habilitando o uso do Spring MVC
-@ComponentScan(basePackageClasses= {HomeController.class, ProdutoDAO.class,
-		FileSaver.class})	//Mostrando quais as classes de controle
-public class AppWebConfiguration {
+@ComponentScan(basePackageClasses= {HomeController.class, ProdutoDAO.class,	FileSaver.class})	//Mostrando quais as classes de controle
+public class AppWebConfiguration extends WebMvcConfigurerAdapter {
 	
 	@Bean
 	public InternalResourceViewResolver internalResourceViewResolver () {	//Método para setar o prefixo e o sulfixo dos endereços das páginas jsp (views)
@@ -63,5 +64,10 @@ public class AppWebConfiguration {
 	@Bean
 	public MultipartResolver multipartResolver() {
 	    return new StandardServletMultipartResolver();
+	}
+	
+	@Override //Para localizar a pasta com css resources
+	public void addResourceHandlers(ResourceHandlerRegistry registry) {
+	  registry.addResourceHandler("/resources/**").addResourceLocations("/resources/");
 	}
 }

@@ -1,12 +1,12 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="s"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 
 <!DOCTYPE html>
 <html>
 <head>
+
 <c:url value="/" var="contextPath" />
 <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
@@ -103,7 +103,7 @@
 						<li class="buy-option">
 							<input type="radio"name="tipoPreco"class="variant-radio"
 								id="tipoPreco"value="${preco.tipo}"checked="checked" />
-							<label class="variant-label">${produto.tipoPreco}</label>
+							<label class="variant-label">${preco.tipo}</label>
 							<small class="compare-at-price">R$ 39,90</small>
 							<p class="variant-price">${preco.valor}</p>
 						</li>
@@ -128,9 +128,7 @@
 				<p>Número de páginas: 
 					<span>${produto.paginas}</span>
 				</p>
-				<p>Data de publicação:
-					<fmt:formatDate pattern="dd/MM/yyyy"value="${produto.dataLancamento.time}" />
-				</p>
+				<p>Data de publicação: <fmt:formatDate pattern="dd/MM/yyyy" value="${produto.dataLancamento.time}"/></p>
 				<p>Encontrou um erro?
 					<a href='/submissao-errata' target='_blank'>Submeta uma errata</a>
 				</p>
