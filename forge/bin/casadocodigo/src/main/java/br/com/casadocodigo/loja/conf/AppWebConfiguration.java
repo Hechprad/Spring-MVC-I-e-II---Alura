@@ -18,6 +18,7 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import br.com.casadocodigo.loja.controllers.HomeController;
 import br.com.casadocodigo.loja.daos.ProdutoDAO;
 import br.com.casadocodigo.loja.infra.FileSaver;
+import br.com.casadocodigo.loja.models.CarrinhoCompras;
 
 /**
  * @author Hech
@@ -25,7 +26,8 @@ import br.com.casadocodigo.loja.infra.FileSaver;
  */
 
 @EnableWebMvc	//Spring annotation - Configurações iniciais, habilitando o uso do Spring MVC
-@ComponentScan(basePackageClasses= {HomeController.class, ProdutoDAO.class,	FileSaver.class})	//Mostrando quais as classes de controle
+@ComponentScan(basePackageClasses= {HomeController.class, 
+		ProdutoDAO.class, FileSaver.class, CarrinhoCompras.class})	//Mostrando quais as classes de controle
 public class AppWebConfiguration extends WebMvcConfigurerAdapter {
 	
 	@Bean
@@ -33,6 +35,8 @@ public class AppWebConfiguration extends WebMvcConfigurerAdapter {
 		InternalResourceViewResolver resolver = new InternalResourceViewResolver();
 		resolver.setPrefix("/WEB-INF/views/");
 		resolver.setSuffix(".jsp");
+		
+		resolver.setExposeContextBeansAsAttributes(true); //todos os beans ficaram disponíveis como atributo na aplicação
 		
 		return resolver;
 	}
