@@ -79,10 +79,9 @@
 						<td class="item-title">${item.produto.titulo}</td>
 						<td class="numeric-cell">${item.preco}</td>
 						<td class="quantity-input-cell">
-							<input type="number" min="0" id="quantidade" name="quantidade" 
-							value="${carrinhoCompras.getQuantidade(item)}" />
-						</td>
-						<td class="numeric-cell">${carrinhoCompras.getTotal(item)} </td>
+							<input type="number" min="0" id="quantidade" name="quantidade"
+							value="${carrinhoCompras.getQuantidade(item)}"/></td>
+						<td class="numeric-cell">${carrinhoCompras.getTotal(item)}</td>
 						<td class="remove-item">
 							<form action="" method="POST">
 								<input type="image" src="${contextPath}/resources/imagens/excluir.png" 
