@@ -1,5 +1,7 @@
 package br.com.casadocodigo.loja.models;
 
+import java.math.BigDecimal;
+import java.util.Collection;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
@@ -12,6 +14,10 @@ import org.springframework.web.context.WebApplicationContext;
 public class CarrinhoCompras {
 
 	private Map<CarrinhoItem, Integer> itens = new LinkedHashMap<CarrinhoItem, Integer>();
+	
+	public Collection<CarrinhoItem> getItens(){
+		return itens.keySet();
+	}
 	
 	public void add(CarrinhoItem item) {
 		itens.put(item, getQuantidade(item) + 1);
@@ -29,5 +35,9 @@ public class CarrinhoCompras {
 					.stream()
 					.reduce(0, 
 					(proximo, acumulador) -> proximo + acumulador);
+	}
+	
+	public BigDecimal getTotal(CarrinhoItem item) {
+		return item.getTotal(getQuantidade(item));
 	}
 }

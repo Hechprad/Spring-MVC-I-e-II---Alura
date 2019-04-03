@@ -35,7 +35,7 @@
 			<div id="header-content">
 				<nav id="main-nav">
 					<ul class="clearfix">
-						<li><a href="/carrinho" rel="nofollow">Seu Carrinho (${carrinhoCompras.quantidade})</a></li>
+						<li><a href="${s:mvcUrl('CCC#itens').build()}" rel="nofollow">Seu Carrinho (${carrinhoCompras.quantidade})</a></li>
 						<li><a href="/pages/sobre-a-casa-do-codigo" rel="nofollow">Sobre Nós</a></li>
 						<li><a href="/pages/perguntas-frequentes" rel="nofollow">Perguntas Frequentes</a></li>
 					</ul>
@@ -72,30 +72,30 @@
 				</tr>
 			</thead>
 			<tbody>
-				<!-- AQUI USE c:forEach PARA LISTAR OS ITENS -->
+				<c:forEach items="${carrinhoCompras.itens}" var="item"> <!-- c:forEach PARA LISTAR OS ITENS -->
 					<tr>
 						<td class="cart-img-col"><img src="http://cdn.shopify.com/s/files/1/0155/7645/products/css-eficiente-featured_large.png?v=1435245145"
-							width="71px" height="100px" />
-						</td>
-						<td class="item-title">${produto.titulo}</td>
-						<td class="numeric-cell">AQUI COLOQUE O PRECO DO ITEM</td>
+							width="71px" height="100px" /></td>
+						<td class="item-title">${item.produto.titulo}</td>
+						<td class="numeric-cell">${item.preco}</td>
 						<td class="quantity-input-cell">
-								<input type="number" min="0" id="quantidade" name="quantidade" value="AQUI COLOQUE QUANTIADE DO ITEM" />
+							<input type="number" min="0" id="quantidade" name="quantidade" 
+							value="${carrinhoCompras.getQuantidade(item)}" />
 						</td>
-						<td class="numeric-cell">AQUI COLOQUE O TOAL DO ITEM</td>
+						<td class="numeric-cell">${carrinhoCompras.getTotal(item)} </td>
 						<td class="remove-item">
 							<form action="" method="POST">
-								<input type="image" src="${contextPath }/resources/imagens/excluir.png" 
+								<input type="image" src="${contextPath}/resources/imagens/excluir.png" 
 									alt="Excluir" title="Excluir" />
 							</form>	
 						</td>
 					</tr>
-				<!-- FIM DO c:forEach -->
+				</c:forEach> <!-- FIM DO c:forEach -->
 			</tbody>
 			<tfoot>
 				<tr>
 					<td colspan="3"><input type="submit" class="checkout" name="checkout" value="Finalizar compra" /></td>
-					<td class="numeric-cell">AQUI COLOQUE O TOTAL DO CARRINHO</td>
+					<td class="numeric-cell">${carrinhoCompras.total}</td>
 					<td></td>
 				</tr>
 			</tfoot>
