@@ -11,7 +11,7 @@
   - Git instalado
   - MySQL 8.0.15 instalado
   - Apache-maven-3.6.0 instalado
-  - Apache-tomcat-9.0.16 instalado
+  - Apache-tomcat-9.0.16 instalado -> endereço do server local: 'http://localhost:8080/casadocodigo'
 ***
 ## 2:  
   - Repositório criado no git
