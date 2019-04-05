@@ -72,7 +72,8 @@ Dependências de Validação de Dados
   - hibernate-validator - 4.2.0.Final
   
 Dependência de conversão para objeto da classe DadosPagamento em JSON - Aula 14 - Módulo 1
-  - jackson-core - 2.5.1
-  - jackson-databind - 2.5.1
+-> versão da dependência atualizada para evitar um problema de vulnerabilidade na versão utilizada na época em que o curso foi gravado
+  - jackson-core - 2.9.8
+  - jackson-databind - 2.9.8
 ***          
 
