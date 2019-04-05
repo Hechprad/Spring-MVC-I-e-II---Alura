@@ -18,6 +18,7 @@ public class PagamentoController {
 	@Autowired
 	private CarrinhoCompras carrinho;
 	
+	@Autowired
 	private RestTemplate restTemplate;
 	
 	@RequestMapping(value="/finalizar", method=RequestMethod.POST)	//Aceita apenas método POST
