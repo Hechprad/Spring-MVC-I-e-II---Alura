@@ -9,6 +9,7 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import br.com.casadocodigo.loja.models.CarrinhoCompras;
+import br.com.casadocodigo.loja.models.DadosPagamento;
 
 @RequestMapping("/pagamento")
 @Controller
@@ -22,7 +23,7 @@ public class PagamentoController {
 	@RequestMapping(value="/finalizar", method=RequestMethod.POST)	//Aceita apenas método POST
 	public ModelAndView finalizar(RedirectAttributes model) {
 		String uri = "http://book-payment.herokuapp.com/payment";
-		String response = restTemplate.postForObject(uri, carrinho.getTotal(), String.class);//Realiza requisições GET e POST utilizando o protocolo httl para integrar aplicações
+		String response = restTemplate.postForObject(uri, new DadosPagamento(carrinho.getTotal()), String.class);//Realiza requisições GET e POST utilizando o protocolo httl para integrar aplicações
 		System.out.println(carrinho.getTotal());
 		model.addFlashAttribute("sucesso", response);
 		
