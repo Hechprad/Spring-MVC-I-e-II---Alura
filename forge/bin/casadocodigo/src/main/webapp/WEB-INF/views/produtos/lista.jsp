@@ -55,6 +55,7 @@
 	<h1>Lista de Produtos</h1>
 	<br>
 	<div style="font-size: 30px; color: green;">${sucesso}</div>
+	<div style="font-size: 30px; color: red;">${falha}</div>
 	<br>
 	<table>
 		<tr>
