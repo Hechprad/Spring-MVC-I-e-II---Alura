@@ -34,8 +34,10 @@ public class PagamentoController {
 			
 			try {
 				String response = restTemplate.postForObject(uri, new DadosPagamento(carrinho.getTotal()), String.class);//Realiza requisições GET e POST utilizando o protocolo httl para integrar aplicações
-				System.out.println(response);
 				model.addFlashAttribute("sucesso", response);
+				System.out.println(response);
+				carrinho.limpaCarrinho();
+				System.out.println("Carrinho de Compras LIMPO");
 				return new ModelAndView("redirect:/produtos");
 			} catch (HttpClientErrorException e) {
 				e.printStackTrace();
