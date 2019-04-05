@@ -7,11 +7,13 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 import org.springframework.context.annotation.Scope;
+import org.springframework.context.annotation.ScopedProxyMode;
 import org.springframework.stereotype.Component;
 import org.springframework.web.context.WebApplicationContext;
 
 @Component
-@Scope(value=WebApplicationContext.SCOPE_SESSION)	//Carrinho de compras passa a ter uma instância por sessão, uma para cada usuário
+@Scope(value=WebApplicationContext.SCOPE_SESSION, proxyMode=ScopedProxyMode.TARGET_CLASS)	//Carrinho de compras passa a ter uma instância por sessão, uma para cada usuário
+																							//Spring se vira e modifica de acordo com a necessidade da classe que alvo
 public class CarrinhoCompras implements Serializable{
 
 	private static final long serialVersionUID = 1L;
