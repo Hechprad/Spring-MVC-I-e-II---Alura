@@ -70,5 +70,9 @@ Dependências JPA
 Dependências de Validação de Dados
   - validation-api - 1.0.0.GA
   - hibernate-validator - 4.2.0.Final
+  
+Dependência de conversão para objeto da classe DadosPagamento em JSON - Aula 14 - Módulo 1
+  - jackson-core - 2.5.1
+  - jackson-databind - 2.5.1
 ***          
 
