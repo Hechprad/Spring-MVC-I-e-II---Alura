@@ -1,5 +1,8 @@
 package br.com.casadocodigo.loja.conf;
 
+import org.springframework.cache.CacheManager;
+import org.springframework.cache.annotation.EnableCaching;
+import org.springframework.cache.concurrent.ConcurrentMapCacheManager;
 import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -29,6 +32,7 @@ import br.com.casadocodigo.loja.models.CarrinhoCompras;
 @EnableWebMvc	//Spring annotation - Configurações iniciais, habilitando o uso do Spring MVC
 @ComponentScan(basePackageClasses= {HomeController.class, 
 		ProdutoDAO.class, FileSaver.class, CarrinhoCompras.class})	//Mostrando quais as classes de controle
+@EnableCaching //habilitando o cache na aplicação
 public class AppWebConfiguration extends WebMvcConfigurerAdapter {
 	
 	@Bean
@@ -79,5 +83,11 @@ public class AppWebConfiguration extends WebMvcConfigurerAdapter {
 	@Bean
 	public RestTemplate restTemplate() {
 		return new RestTemplate();
+	}
+	
+	//gerente de cache, prove o cache
+	@Bean
+	public CacheManager cacheManager() {
+		return new ConcurrentMapCacheManager();
 	}
 }
