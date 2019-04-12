@@ -1,4 +1,4 @@
-# 📌Spring-MVC-I---Alura
+# 📌Spring-MVC-I-e-II---Alura
 ***
 ## Projeto realizado no primeiro curso de Spring MVC da Alura 
 (Site de uma loja de livros)
@@ -11,7 +11,7 @@
   - Git instalado
   - MySQL 8.0.15 instalado
   - Apache-maven-3.6.0 instalado
-  - Apache-tomcat-9.0.16 instalado -> endereço do server local: 'http://localhost:8080/casadocodigo'
+  - apache-tomcat-7.0.93 instalado -> endereço do server local: 'http://localhost:8080/casadocodigo'
 ***
 ## 2:  
   - Repositório criado no git
