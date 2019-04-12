@@ -136,7 +136,8 @@
 			<version>4.2.0.Final</version>
 		</dependency>
 
-		<!-- dependências para transformar o objeto da classe DadosPagamento em JSON -->
+		<!-- dependências para transformar o objeto da classe DadosPagamento em 
+			JSON -->
 
 		<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core -->
 		<dependency>
@@ -149,6 +150,21 @@
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-databind</artifactId>
 			<version>2.9.8</version>
+		</dependency>
+
+		<!-- dependências do cache do google -->
+
+		<!-- https://mvnrepository.com/artifact/com.google.guava/guava -->
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+			<version>18.0</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.springframework/spring-context-support -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context-support</artifactId>
+			<version>4.1.0.RELEASE</version>
 		</dependency>
 
 	</dependencies>
