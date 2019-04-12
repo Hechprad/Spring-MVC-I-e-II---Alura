@@ -54,7 +54,7 @@ public class ProdutosController {
 			return form(produto);
 		}
 		
-		String path = fileSaver.write("arquivos-sumario", sumario);
+		String path = fileSaver.write("arquivosSumario", sumario);
 		produto.setSumarioPath(path);
 		produtoDao.gravar(produto);	//persistindo o produto no banco
 		

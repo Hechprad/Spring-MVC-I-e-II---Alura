@@ -65,7 +65,7 @@
 		<br>
 		<label>Descrição</label>
 		<br>
-		<form:textarea rows="10" cols="20" path="descricao"/>
+		<form:textarea rows="15" cols="100" path="descricao"/>
 		<br>
 	</div>
 	<div>

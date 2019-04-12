@@ -21,7 +21,7 @@ public class HomeController {
 	private ProdutoDAO produtoDao;
 	
 	@RequestMapping("/") 	//Mapeamento do request do usuário
-	@Cacheable()	//cacheando o método, guardando em memória para aumetar a performance
+	@Cacheable(value="produtosHome")	//cacheando o método, guardando em memória para aumetar a performance
 	public ModelAndView index() {	//Retorna a página inicial do nosso projeto
 		List<Produto> produtos = produtoDao.listar();
 		ModelAndView modelAndView = new ModelAndView("home");
