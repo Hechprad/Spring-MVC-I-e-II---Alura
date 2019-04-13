@@ -58,8 +58,8 @@
 	
 	<h1 class="text-center">Lista de Produtos</h1>
 	<br>
-	<div class="alert alert-success container text-center" role="alert" style="font-size: 30px;">llllllllllll${sucesso}</div>
-	<div class="alert alert-danger container text-center" role="alert" style="font-size: 30px;">kkkkkkkk${falha}</div>
+	<div class="alert alert-success container text-center alert-dismissible fade show" role="alert" style="font-size: 30px;">${sucesso}</div>
+	<div class="alert alert-danger container text-center" role="alert" style="font-size: 30px;">${falha}</div>
 	<br>
 	<div class="container, w-100 p-2, shadow-lg p-3 mb-5 bg-white rounded">
 		<table class="table table-dark table-bordered table-striped table-hover">

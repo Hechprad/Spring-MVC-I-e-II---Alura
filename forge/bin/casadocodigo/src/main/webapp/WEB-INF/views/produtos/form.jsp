@@ -10,13 +10,12 @@
 <c:url value="/resources/css" var="contextPath" />
 <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
 <title>Livros de Java, Android, iPhone, Ruby, PHP e muito mais - Casa do Código</title>
 
 <link href="${contextPath}/bootstrap.min.css" rel="stylesheet"/>
 <link href="${contextPath}/bootstrap-grid.min.css" rel="stylesheet"/>
-
 <link href="${contextPath}/cssbase-min.css" rel="stylesheet" type="text/css" media="all" />
 <link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' />
 <link href="${contextPath}/fonts.css" rel="stylesheet" type="text/css" media="all" />
@@ -29,6 +28,8 @@
 <link href="${contextPath}/guia-do-programador-style.css" rel="stylesheet" type="text/css" media="all" />
 <link href="${contextPath}/produtos.css" rel="stylesheet" type="text/css" media="all" />
 <link rel="canonical" href="http://www.casadocodigo.com.br/" />
+
+<script src="resources/js/bootstrap.min.js"></script>
 
 <body>
 
