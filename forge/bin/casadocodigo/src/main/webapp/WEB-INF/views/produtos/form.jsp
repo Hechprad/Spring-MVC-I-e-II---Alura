@@ -7,106 +7,84 @@
 <html>
 <head>
 
-<c:url value="/resources/css" var="contextPath" />
 <meta charset="utf-8" />
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-
 <title>Livros de Java, Android, iPhone, Ruby, PHP e muito mais - Casa do Código</title>
 
-<link href="${contextPath}/bootstrap.min.css" rel="stylesheet"/>
-<link href="${contextPath}/bootstrap-grid.min.css" rel="stylesheet"/>
-<link href="${contextPath}/cssbase-min.css" rel="stylesheet" type="text/css" media="all" />
-<link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' />
-<link href="${contextPath}/fonts.css" rel="stylesheet" type="text/css" media="all" />
-<link href="${contextPath}/fontello-ie7.css" rel="stylesheet" type="text/css" media="all" />
-<link href="${contextPath}/fontello-embedded.css" rel="stylesheet" type="text/css" media="all" />
-<link href="${contextPath}/fontello.css" rel="stylesheet" type="text/css" media="all" />
-<link href="${contextPath}/style.css" rel="stylesheet" type="text/css" media="all" />
-<link href="${contextPath}/layout-colors.css" rel="stylesheet" type="text/css" media="all" />
-<link href="${contextPath}/responsive-style.css" rel="stylesheet" type="text/css" media="all" />
-<link href="${contextPath}/guia-do-programador-style.css" rel="stylesheet" type="text/css" media="all" />
-<link href="${contextPath}/produtos.css" rel="stylesheet" type="text/css" media="all" />
-<link rel="canonical" href="http://www.casadocodigo.com.br/" />
-
+<c:url value="/resources/css" var="contextPath"/>
+<link rel="stylesheet" href="${contextPath}/bootstrap.min.css"/>
+<link rel="stylesheet" href="${contextPath}/bootstrap-theme.min.css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="resources/js/bootstrap.min.js"></script>
+<style>
+	body{padding:70px 0px;}
+</style>
 
+</head>
 <body>
 
-	<header id="layout-header">
-		<div class="clearfix container">
-			<a href="/casadocodigo" id="logo"> </a>
-			<div id="header-content">
-				<nav id="main-nav">
-					<ul class="clearfix">
-						<li><a href="${s:mvcUrl('CCC#itens').build()}" rel="nofollow">Seu Carrinho (${carrinhoCompras.quantidade})</a></li>
-						<li><a href="/pages/sobre-a-casa-do-codigo" rel="nofollow">Sobre Nós</a></li>
-						<li><a href="/pages/perguntas-frequentes" rel="nofollow">Perguntas Frequentes</a></li>
-					</ul>
-				</nav>
-			</div>
-		</div>
-	</header>
-	<nav class="categories-nav">
-		<ul class="container">
-			<li class="category"><a href="/casadocodigo">Home</a></li>
-			<li class="category"><a href="/casadocodigo/produtos/form">Cadastrar </a></li>
-			<li class="category"><a href="/casadocodigo/produtos">Listar Produtos </a></li>
-		</ul>
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+	  <div class="container">
+	    <div class="navbar-header">
+	      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+	        <span class="sr-only">Toggle navigation</span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	      </button>
+	      <a class="navbar-brand" href="${s:mvcUrl('HC#index').build()}">Casa do Código</a>
+	    </div>
+	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+	      <ul class="nav navbar-nav">
+	      	<li>home</li>
+	        <li><a href="${s:mvcUrl('PC#listar').build()}">Lista de Produtos</a></li>
+	        <li><a href="${s:mvcUrl('PC#form').build()}">Cadastro de Produtos</a></li>
+	      </ul>
+	      <ul class="nav navbar-nav navbar-right">
+	        <li ><a href="${s:mvcUrl('CCC#itens').build()}" rel="nofollow">Seu Carrinho (${carrinhoCompras.quantidade})</a></li>
+	      </ul>
+	    </div><!-- /.navbar-collapse -->
+	  </div>
 	</nav>
 
-<!-- action="${s:mvcUrl('PC#gravar').build()}" pega o método gravar do ProdutoController -->
-<form:form action="${s:mvcUrl('PC#gravar').build()}" method="POST" 
-		commandName="produto" enctype="multipart/form-data">
-	<div>
-		<form:errors path="titulo" cssStyle="font-size: 20px; color: red;"/>
-		<br>
-		<label>Título</label>
-		<br>
-		<form:input path="titulo"/>
-	</div>
-	<div>
-		<form:errors path="descricao" cssStyle="font-size: 20px; color: red;"/>
-		<br>
-		<label>Descrição</label>
-		<br>
-		<form:textarea rows="15" cols="100" path="descricao"/>
-		<br>
-	</div>
-	<div>
-		<form:errors path="paginas" cssStyle="font-size: 20px; color: red;"/>
-		<br>
-		<label>Páginas</label>
-		<br>
-		<form:input path="paginas"/>
-		<br>
-	</div>
-	<div>
-		<form:errors path="dataLancamento" cssStyle="font-size: 20px; color: red;"/>
-		<br>
-		<label>Data de Lançamento</label>
-		<br>
-		<form:input path="dataLancamento" placeholder="dd/mm/yyyy"/>
-		<br>
-	</div>
-	<br>
-	<c:forEach items="${tipos}" var="tipoPreco" varStatus="status">
-		<div>
-			<form:hidden path="precos[${status.index}].tipo" value="${tipoPreco}"/>
-			<label>${tipoPreco}</label>
-			<br>
-			<form:input path="precos[${status.index}].valor"/>
+<div class="container">
+	<h1 class="text-center">Cadastro de Produto</h1>
+	<!-- action="${s:mvcUrl('PC#gravar').build()}" pega o método gravar do ProdutoController -->
+	<form:form action="${s:mvcUrl('PC#gravar').build()}" method="POST" 
+			commandName="produto" enctype="multipart/form-data">
+		<div class="form-group">
+			<form:errors path="titulo" cssStyle="font-size: 20px; color: red;"/>
+			<label>Título</label>
+			<form:input path="titulo" cssClass="form-control"/>
 		</div>
-	</c:forEach>
-	<br>
-	<div>
-		<label>Sumário</label>
+		<div class="form-group">
+			<form:errors path="descricao" cssStyle="font-size: 20px; color: red;"/>
+			<label>Descrição</label>
+			<form:textarea path="descricao" cssClass="form-control"/>
+		</div>
+		<div class="form-group">
+			<form:errors path="paginas" cssStyle="font-size: 20px; color: red;"/>
+			<label>Páginas</label>
+			<form:input path="paginas" cssClass="form-control"/>
+		</div>
+		<div class="form-group">
+			<form:errors path="dataLancamento" cssStyle="font-size: 20px; color: red;"/>
+			<label>Data de Lançamento</label>
+			<form:input path="dataLancamento" placeholder="dd/mm/yyyy" cssClass="form-control"/>
+		</div>
+		<c:forEach items="${tipos}" var="tipoPreco" varStatus="status">
+			<div  class="form-group">
+				<form:hidden path="precos[${status.index}].tipo" value="${tipoPreco}"/>
+				<label>${tipoPreco}</label>
+				<form:input path="precos[${status.index}].valor" cssClass="form-control"/>
+			</div>
+		</c:forEach>
+		<div class="form-group">
+			<label>Sumário</label>
+			<input name="sumario" type="file" class="form-control">
+		</div>
 		<br>
-		<input name="sumario" type="file">
-	</div>
-	<br>
-	<button type="submit">Cadastrar</button><br>
-</form:form>
-
+		<button type="submit" class="btn btn-primary">Cadastrar</button><br>
+	</form:form>
+</div>
 </body>
 </html>

@@ -7,62 +7,52 @@
 <html>
 <head>
 
-<c:url value="/resources/css" var="contextPath" />
 <meta charset="utf-8" />
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<title>Livros de Java, Android, iPhone, Ruby, PHP e muito mais - Casa do Código</title>
 
-<title>${produto.titulo}- Casa do Código</title>
-
-<link href="${contextPath}/bootstrap.min.css" rel="stylesheet"/>
-<link href="${contextPath}/bootstrap-grid.min.css" rel="stylesheet"/>
-<link href="${contextPath}/cssbase-min.css" rel="stylesheet" type="text/css" media="all" />
-<link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' />
-<link href="${contextPath}/fonts.css" rel="stylesheet" type="text/css" media="all" />
-<link href="${contextPath}/fontello-ie7.css" rel="stylesheet" type="text/css" media="all" />
-<link href="${contextPath}/fontello-embedded.css" rel="stylesheet" type="text/css" media="all" />
-<link href="${contextPath}/fontello.css" rel="stylesheet" type="text/css" media="all" />
-<link href="${contextPath}/style.css" rel="stylesheet" type="text/css" media="all" />
-<link href="${contextPath}/layout-colors.css" rel="stylesheet" type="text/css" media="all" />
-<link href="${contextPath}/responsive-style.css" rel="stylesheet" type="text/css" media="all" />
-<link href="${contextPath}/guia-do-programador-style.css" rel="stylesheet" type="text/css" media="all" />
-<link href="${contextPath}/produtos.css" rel="stylesheet" type="text/css" media="all" />
-<link rel="canonical" href="http://www.casadocodigo.com.br/" />
-
+<c:url value="/resources/css" var="contextPath"/>
+<link rel="stylesheet" href="${contextPath}/bootstrap.min.css"/>
+<link rel="stylesheet" href="${contextPath}/bootstrap-theme.min.css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="resources/js/bootstrap.min.js"></script>
+<style>
+	body{padding-top:70px;}
+</style>
 
 </head>
-<body class="produto">
+<body>
 
-	<header id="layout-header">
-		<div class="clearfix container">
-			<a href="/casadocodigo" id="logo"> </a>
-			<div id="header-content">
-				<nav id="main-nav">
-					<ul class="clearfix">
-						<li><a href="${s:mvcUrl('CCC#itens').build()}" rel="nofollow">Seu Carrinho (${carrinhoCompras.quantidade})</a></li>
-						<li><a href="/pages/sobre-a-casa-do-codigo" rel="nofollow">Sobre Nós</a></li>
-						<li><a href="/pages/perguntas-frequentes" rel="nofollow">Perguntas Frequentes</a></li>
-					</ul>
-				</nav>
-			</div>
-		</div>
-	</header>
-	<nav class="categories-nav">
-		<ul class="container">
-			<li class="category"><a href="/casadocodigo">Home</a></li>
-			<li class="category"><a href="/casadocodigo/produtos/form">Cadastrar </a></li>
-			<li class="category"><a href="/casadocodigo/produtos">Listar Produtos </a></li>
-		</ul>
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+	  <div class="container">
+	    <div class="navbar-header">
+	      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+	        <span class="sr-only">Toggle navigation</span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	      </button>
+	      <a class="navbar-brand" href="${s:mvcUrl('HC#index').build()}">Casa do Código</a>
+	    </div>
+	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+	      <ul class="nav navbar-nav">
+	      	<li>home</li>
+	        <li><a href="${s:mvcUrl('PC#listar').build()}">Lista de Produtos</a></li>
+	        <li><a href="${s:mvcUrl('PC#form').build()}">Cadastro de Produtos</a></li>
+	      </ul>
+	      <ul class="nav navbar-nav navbar-right">
+	        <li ><a href="${s:mvcUrl('CCC#itens').build()}" rel="nofollow">Seu Carrinho (${carrinhoCompras.quantidade})</a></li>
+	      </ul>
+	    </div><!-- /.navbar-collapse -->
+	  </div>
 	</nav>
 
 	<article id="${produto.id}">
 		<header id="product-highlight" class="clearfix">
 			<div id="product-overview" class="container">
+				<h1 class="product-title">${produto.titulo}</h1>
 				<img width="280px" height="395px"
 					src="http://cdn.shopify.com/s/files/1/0155/7645/products/css-eficiente-featured_large.png?v=1435245145"
 					class="product-featured-image" />
-				<h1 class="product-title">${produto.titulo}</h1>
 				<p class="product-author">
 					<span class="product-author-link"> </span>
 				</p>
@@ -104,85 +94,9 @@
 					<span>${produto.paginas}</span>
 				</p>
 				<p>Data de publicação: <fmt:formatDate pattern="dd/MM/yyyy" value="${produto.dataLancamento.time}"/></p>
-				<p>Encontrou um erro?
-					<a href='/submissao-errata' target='_blank'>Submeta uma errata</a>
-				</p>
 			</section>
 		</div>
 	</article>
 
-	<footer id="layout-footer">
-		<div class="clearfix container">
-
-			<div id="collections-footer">
-				<!-- cdc-footer -->
-				<p class="footer-title">Coleções de Programação</p>
-				<ul class="footer-text-links">
-					<li><a href="/collections/livros-de-java">Java</a></li>
-					<li><a href="/collections/livros-desenvolvimento-web">Desenvolvimento
-							Web</a></li>
-					<li><a href="/collections/livros-de-mobile">Mobile</a></li>
-					<li><a href="/collections/games">Games</a></li>
-					<li><a href="/collections/livros-de-front-end">Front End</a></li>
-				</ul>
-				<p class="footer-title">Outros Assuntos</p>
-				<ul class="footer-text-links">
-					<li><a href="/collections/livros-de-agile">Agile</a></li>
-					<li><a href="/collections/outros">e outros...</a></li>
-				</ul>
-			</div>
-			<div id="social-footer">
-				<!-- books-footer -->
-				<p class="footer-title">Links da Casa do Código</p>
-				<ul class="footer-text-links">
-					<li><a href="http://livros.casadocodigo.com.br" rel="nofollow">Meus
-							E-books</a></li>
-					<li><a href="/pages/sobre-a-casa-do-codigo">Sobre a Casa
-							do Código</a></li>
-					<li><a href="/pages/perguntas-frequentes">Perguntas
-							Frequentes</a></li>
-					<li><a href="https://www.caelum.com.br">Caelum - Ensino e
-							Inovação</a></li>
-					<li><a href="http://www.codecrushing.com/" rel="nofollow">Code
-							Crushing</a></li>
-					<li><a
-						href="http://www.casadocodigo.com.br/pages/politica-de-privacidade"
-						rel="nofollow">Política de Privacidade</a></li>
-				</ul>
-				<p class="footer-title">Redes Sociais</p>
-				<ul>
-					<li class="social-links"><a
-						href="http://www.twitter.com/casadocodigo" target="_blank"
-						id="twitter" rel="nofollow">Facebook</a> <a
-						href="http://www.facebook.com/casadocodigo" target="_blank"
-						id="facebook" rel="nofollow">Twitter</a></li>
-				</ul>
-			</div>
-			<div id="newsletter-footer">
-				<!-- social-footer -->
-				<p class="footer-title">Receba as Novidades e Lançamentos</p>
-				<div id="form-newsletter">
-					<form action="" method="POST" id="ss-form" class="form-newsletter">
-						<ul>
-							<li><input type="hidden" name="pageNumber" value="0" /><input
-								type="hidden" name="backupCache" value="" /><input type="email"
-								name="entry.0.single" value="" class="ss-q-short" id="entry_0"
-								placeholder="seu@email.com" /></li>
-							<li><input type="submit" name="submit"
-								value="Quero Receber!" id="submit-newsletter" /></li>
-						</ul>
-					</form>
-					<ul>
-						<li class="ie8"><a href="" rel="nofollow">Receba as
-								Novidades e Lançamentos</a></li>
-					</ul>
-				</div>
-				<ul class="footer-payments">
-					<li></li>
-					<li></li>
-				</ul>
-			</div>
-		</div>
-	</footer>
 </body>
 </html>

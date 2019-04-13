@@ -17,7 +17,7 @@
 <script src="resources/js/bootstrap.min.js"></script>
 <style>
 	td{word-wrap:break-word;}
-	body{padding-top:60px;}
+	body{padding-top:70px;}
 </style>
 
 </head>
@@ -32,7 +32,7 @@
 	        <span class="icon-bar"></span>
 	        <span class="icon-bar"></span>
 	      </button>
-	      <a class="navbar-brand" href="/casadocodigo">Casa do Código</a>
+	      <a class="navbar-brand" href="${s:mvcUrl('HC#index').build()}">Casa do Código</a>
 	    </div>
 	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 	      <ul class="nav navbar-nav">
@@ -49,9 +49,25 @@
 	
 	<div class="container" >
 		<h1 class="text-center" style="font-size: 30px">Lista de Produtos</h1>
-		<br>
-		<div class="alert alert-success container text-center alert-dismissible fade show" role="alert" style="font-size: 30px;">${sucesso}</div>
-		<div class="alert alert-danger container text-center alert-dismissible fade show" role="alert" style="font-size: 30px;">${falha}</div>
+			
+			<!-- alertas de mensagem após cadastro de livro -->
+			<c:if test="${sucesso != null}"> 
+				<div class="alert alert-success text-center alert-dismissible" role="alert" style="font-size: 30px;">
+					<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					${sucesso}
+				</div>
+			</c:if>
+			<c:if test="${falha != null}"> 
+				<div class="alert alert-danger text-center alert-dismissible" role="alert" style="font-size: 30px;">
+					<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					${falha}
+				</div>
+			</c:if>
+		
 		<table style="width: 100%;table-layout:fixed;" class="table table-bordered table-striped table-hover">
 			<tr>
 				<th class="text-center">ID do Livro</th>

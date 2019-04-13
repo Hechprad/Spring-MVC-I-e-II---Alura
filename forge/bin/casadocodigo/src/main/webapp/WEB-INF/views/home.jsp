@@ -6,59 +6,48 @@
 <html>
 <head>
 
-<c:url value="/resources/css" var="contextPath" />
 <meta charset="utf-8" />
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-
 <title>Livros de Java, Android, iPhone, Ruby, PHP e muito mais - Casa do Código</title>
 
-<link href="${contextPath}/bootstrap.min.css" rel="stylesheet"/>
-<link href="${contextPath}/bootstrap-grid.min.css" rel="stylesheet"/>
-<link href="${contextPath}/cssbase-min.css" rel="stylesheet" type="text/css" media="all" />
-<link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' />
-<link href="${contextPath}/fonts.css" rel="stylesheet" type="text/css" media="all" />
-<link href="${contextPath}/fontello-ie7.css" rel="stylesheet" type="text/css" media="all" />
-<link href="${contextPath}/fontello-embedded.css" rel="stylesheet" type="text/css" media="all" />
-<link href="${contextPath}/fontello.css" rel="stylesheet" type="text/css" media="all" />
-<link href="${contextPath}/style.css" rel="stylesheet" type="text/css" media="all" />
-<link href="${contextPath}/layout-colors.css" rel="stylesheet" type="text/css" media="all" />
-<link href="${contextPath}/responsive-style.css" rel="stylesheet" type="text/css" media="all" />
-<link href="${contextPath}/guia-do-programador-style.css" rel="stylesheet" type="text/css" media="all" />
-<link href="${contextPath}/produtos.css" rel="stylesheet" type="text/css" media="all" />
-<link rel="canonical" href="http://www.casadocodigo.com.br/" />
-
+<c:url value="/resources/css" var="contextPath"/>
+<link rel="stylesheet" href="${contextPath}/bootstrap.min.css"/>
+<link rel="stylesheet" href="${contextPath}/bootstrap-theme.min.css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="resources/js/bootstrap.min.js"></script>
+<style>
+	body{padding-top:70px;}
+</style>
 
 </head>
 <body>
 
-	<header id="layout-header">
-		<div class="clearfix container">
-			<a href="/casadocodigo" id="logo"> </a>
-			<div id="header-content">
-				<nav id="main-nav">
-					<ul class="clearfix">
-						<li><a href="${s:mvcUrl('CCC#itens').build()}" rel="nofollow">Seu Carrinho (${carrinhoCompras.quantidade})</a></li>
-						<li><a href="/pages/sobre-a-casa-do-codigo" rel="nofollow">Sobre Nós</a></li>
-						<li><a href="/pages/perguntas-frequentes" rel="nofollow">Perguntas Frequentes</a></li>
-					</ul>
-				</nav>
-			</div>
-		</div>
-	</header>
-	<nav class="categories-nav">
-		<ul class="container">
-			<li class="category"><a href="/casadocodigo">Home</a></li>
-			<li class="category"><a href="produtos/form">Cadastrar </a></li>
-			<li class="category"><a href="produtos">Listar Produtos </a></li>
-		</ul>
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+	  <div class="container">
+	    <div class="navbar-header">
+	      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+	        <span class="sr-only">Toggle navigation</span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	      </button>
+	      <a class="navbar-brand" href="${s:mvcUrl('HC#index').build()}">Casa do Código</a>
+	    </div>
+	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+	      <ul class="nav navbar-nav">
+	      	<li>home</li>
+	        <li><a href="${s:mvcUrl('PC#listar').build()}">Lista de Produtos</a></li>
+	        <li><a href="${s:mvcUrl('PC#form').build()}">Cadastro de Produtos</a></li>
+	      </ul>
+	      <ul class="nav navbar-nav navbar-right">
+	        <li ><a href="${s:mvcUrl('CCC#itens').build()}" rel="nofollow">Seu Carrinho (${carrinhoCompras.quantidade})</a></li>
+	      </ul>
+	    </div><!-- /.navbar-collapse -->
+	  </div>
 	</nav>
 
 	<section id="index-section" class="container middle">
 		<h1 class="cdc-call">Livros disponíveis, aproveite!</h1>
 		<ul class="clearfix book-collection">
-
 			<c:forEach items="${produtos}" var="produto">
 				<li>
 					<a href="${s:mvcUrl('PC#detalhe').arg(0,produto.id).build()}" class="block clearfix">
@@ -68,7 +57,6 @@
 					</a>
 				</li>
 			</c:forEach>
-
 		</ul>
 
 		<h2 class="cdc-call">Diferenciais da Casa do Código</h2>
