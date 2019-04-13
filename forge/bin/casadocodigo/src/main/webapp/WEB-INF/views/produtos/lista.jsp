@@ -15,7 +15,8 @@
 <title>Livros de Java, Android, iPhone, Ruby, PHP e muito mais - Casa do Código</title>
 
 <link href="${contextPath}/bootstrap.min.css" rel="stylesheet"/>
-<link href="${contextPath}/bootstrap-theme.min.css" rel="stylesheet"/>
+<link href="${contextPath}/bootstrap-grid.min.css" rel="stylesheet"/>
+
 <link href="${contextPath}/cssbase-min.css" rel="stylesheet" type="text/css" media="all" />
 <link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' />
 <link href="${contextPath}/fonts.css" rel="stylesheet" type="text/css" media="all" />
@@ -55,27 +56,27 @@
 		</ul>
 	</nav>
 	
-	<h1>Lista de Produtos</h1>
+	<h1 class="text-center">Lista de Produtos</h1>
 	<br>
-	<div class="container" style="font-size: 30px; color: green;">${sucesso}</div>
-	<div class="container" style="font-size: 30px; color: red;">${falha}</div>
+	<div class="alert alert-success container text-center" role="alert" style="font-size: 30px;">llllllllllll${sucesso}</div>
+	<div class="alert alert-danger container text-center" role="alert" style="font-size: 30px;">kkkkkkkk${falha}</div>
 	<br>
-	<div class="container">
-		<table class="text-justify, table table-bordered table-striped table-hover">
-			<tr>
-				<td>ID do Livro</td>
-				<td>Título</td>
-				<td>Descrição</td>
-				<td>Páginas</td>
-				<td>Data de Lançamento</td>
+	<div class="container, w-100 p-2, shadow-lg p-3 mb-5 bg-white rounded">
+		<table class="table table-dark table-bordered table-striped table-hover">
+			<tr class="bg-danger">
+				<th scope="col">ID do Livro</th>
+				<th scope="col">Título</th>
+				<th scope="col">Descrição</th>
+				<th scope="col">Páginas</th>
+				<th scope="col">Data de Lançamento</th>
 			</tr>
 			<c:forEach items="${produtos}" var="produto">
 				<tr>
-					<td>${produto.id}</td>	
-					<td><a href="${s:mvcUrl('PC#detalhe').arg(0,produto.id).build()}">${produto.titulo}</a></td>	
-					<td>${produto.descricao}</td>		
-					<td>${produto.paginas}</td>	
-					<td><fmt:formatDate pattern="dd/MM/yyyy" value="${produto.dataLancamento.time}"/></td>	
+					<th scope="row">${produto.id}</th>	
+					<td  align="center" valign="middle"><a href="${s:mvcUrl('PC#detalhe').arg(0,produto.id).build()}">${produto.titulo}</a></td>	
+					<td class="text-break"  align="center" valign="middle">${produto.descricao}</td>		
+					<td align="center" valign="middle">${produto.paginas}</td>	
+					<td align="center" valign="middle"><fmt:formatDate pattern="dd/MM/yyyy" value="${produto.dataLancamento.time}"/></td>	
 				</tr>
 			</c:forEach>
 		</table>
