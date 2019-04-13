@@ -81,9 +81,21 @@ Dependências para uso de cache do google 'guava'
   - spring-context-support - 4.1.0.RELEASE
   
  Dependências de segurança do Spring Security para níveis de poder e acesso de usuários
-  - spring-security-config - 4.0.0.RELEASE
-  - spring-security-taglibs - 4.0.0.RELEASE
-  - spring-security-web - 4.0.0.RELEASE
-  - spring-security-core - 5.1.2.RELEASE
+  - spring-security-config - 4.0.0.M2
+  - spring-security-taglibs - 4.0.0.M2
+  - spring-security-web - 4.0.0.M2
+  - spring-security-core - 4.0.0.M2
+```sh
+<repositories>
+	<repository>
+		<id>spring-milestones</id>
+		<name>Spring Milestones</name>
+		<url>http://repo.spring.io/milestone</url>
+		<snapshots>
+			<enabled>false</enabled>
+		</snapshots>
+	</repository>
+</repositories>
+```
 ***          
 
