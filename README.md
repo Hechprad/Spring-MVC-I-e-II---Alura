@@ -84,6 +84,6 @@ Dependências para uso de cache do google 'guava'
   - spring-security-config - 4.0.0.RELEASE
   - spring-security-taglibs - 4.0.0.RELEASE
   - spring-security-web - 4.0.0.RELEASE
-  - spring-security-core - 4.0.0.RELEASE
+  - spring-security-core - 5.1.2.RELEASE
 ***          
 
