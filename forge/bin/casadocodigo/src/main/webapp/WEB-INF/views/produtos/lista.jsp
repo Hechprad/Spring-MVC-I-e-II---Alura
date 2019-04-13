@@ -7,83 +7,70 @@
 <html>
 <head>
 
-<c:url value="/resources/css" var="contextPath" />
 <meta charset="utf-8" />
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-
 <title>Livros de Java, Android, iPhone, Ruby, PHP e muito mais - Casa do Código</title>
 
-<link href="${contextPath}/bootstrap.min.css" rel="stylesheet"/>
-<link href="${contextPath}/bootstrap-grid.min.css" rel="stylesheet"/>
-
-<link href="${contextPath}/cssbase-min.css" rel="stylesheet" type="text/css" media="all" />
-<link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' />
-<link href="${contextPath}/fonts.css" rel="stylesheet" type="text/css" media="all" />
-<link href="${contextPath}/fontello-ie7.css" rel="stylesheet" type="text/css" media="all" />
-<link href="${contextPath}/fontello-embedded.css" rel="stylesheet" type="text/css" media="all" />
-<link href="${contextPath}/fontello.css" rel="stylesheet" type="text/css" media="all" />
-<link href="${contextPath}/style.css" rel="stylesheet" type="text/css" media="all" />
-<link href="${contextPath}/layout-colors.css" rel="stylesheet" type="text/css" media="all" />
-<link href="${contextPath}/responsive-style.css" rel="stylesheet" type="text/css" media="all" />
-<link href="${contextPath}/guia-do-programador-style.css" rel="stylesheet" type="text/css" media="all" />
-<link href="${contextPath}/produtos.css" rel="stylesheet" type="text/css" media="all" />
-<link rel="canonical" href="http://www.casadocodigo.com.br/" />
-
+<c:url value="/resources/css" var="contextPath"/>
+<link rel="stylesheet" href="${contextPath}/bootstrap.min.css"/>
+<link rel="stylesheet" href="${contextPath}/bootstrap-theme.min.css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="resources/js/bootstrap.min.js"></script>
+<style>
+	td{word-wrap:break-word;}
+	body{padding-top:60px;}
+</style>
+
 </head>
 <body>
-
-	<header id="layout-header">
-		<div class="clearfix container">
-			<a href="/casadocodigo" id="logo"> </a>
-			<div id="header-content">
-				<nav id="main-nav">
-					<ul class="clearfix">
-						<li><a href="${s:mvcUrl('CCC#itens').build()}" rel="nofollow">Seu Carrinho (${carrinhoCompras.quantidade})</a></li>
-						<li><a href="/pages/sobre-a-casa-do-codigo" rel="nofollow">Sobre Nós</a></li>
-						<li><a href="/pages/perguntas-frequentes" rel="nofollow">Perguntas Frequentes</a></li>
-					</ul>
-				</nav>
-			</div>
-		</div>
-	</header>
-	<nav class="categories-nav">
-		<ul class="container">
-			<li class="category"><a href="/casadocodigo">Home</a></li>
-			<li class="category"><a href="produtos/form">Cadastrar </a></li>
-			<li class="category"><a href="produtos">Listar Produtos </a></li>
-		</ul>
+	
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+	  <div class="container">
+	    <div class="navbar-header">
+	      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+	        <span class="sr-only">Toggle navigation</span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	      </button>
+	      <a class="navbar-brand" href="/casadocodigo">Casa do Código</a>
+	    </div>
+	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+	      <ul class="nav navbar-nav">
+	      	<li>home</li>
+	        <li><a href="${s:mvcUrl('PC#listar').build()}">Lista de Produtos</a></li>
+	        <li><a href="${s:mvcUrl('PC#form').build()}">Cadastro de Produtos</a></li>
+	      </ul>
+	      <ul class="nav navbar-nav navbar-right">
+	        <li ><a href="${s:mvcUrl('CCC#itens').build()}" rel="nofollow">Seu Carrinho (${carrinhoCompras.quantidade})</a></li>
+	      </ul>
+	    </div><!-- /.navbar-collapse -->
+	  </div>
 	</nav>
 	
-	<h1 class="text-center">Lista de Produtos</h1>
-	<br>
-	<div class="alert alert-success container text-center alert-dismissible fade show" role="alert" style="font-size: 30px;">${sucesso}</div>
-	<div class="alert alert-danger container text-center" role="alert" style="font-size: 30px;">${falha}</div>
-	<br>
-	<div class="container, w-100 p-2, shadow-lg p-3 mb-5 bg-white rounded">
-		<table class="table table-dark table-bordered table-striped table-hover">
-			<tr class="bg-danger">
-				<th scope="col">ID do Livro</th>
-				<th scope="col">Título</th>
-				<th scope="col">Descrição</th>
-				<th scope="col">Páginas</th>
-				<th scope="col">Data de Lançamento</th>
+	<div class="container" >
+		<h1 class="text-center" style="font-size: 30px">Lista de Produtos</h1>
+		<br>
+		<div class="alert alert-success container text-center alert-dismissible fade show" role="alert" style="font-size: 30px;">${sucesso}</div>
+		<div class="alert alert-danger container text-center alert-dismissible fade show" role="alert" style="font-size: 30px;">${falha}</div>
+		<table style="width: 100%;table-layout:fixed;" class="table table-bordered table-striped table-hover">
+			<tr>
+				<th class="text-center">ID do Livro</th>
+				<th class="text-center">Título</th>
+				<th class="text-center">Descrição</th>
+				<th class="text-center">Páginas</th>
+				<th class="text-center">Data de Lançamento</th>
 			</tr>
 			<c:forEach items="${produtos}" var="produto">
 				<tr>
-					<th scope="row">${produto.id}</th>	
-					<td  align="center" valign="middle"><a href="${s:mvcUrl('PC#detalhe').arg(0,produto.id).build()}">${produto.titulo}</a></td>	
-					<td class="text-break"  align="center" valign="middle">${produto.descricao}</td>		
-					<td align="center" valign="middle">${produto.paginas}</td>	
-					<td align="center" valign="middle"><fmt:formatDate pattern="dd/MM/yyyy" value="${produto.dataLancamento.time}"/></td>	
+					<td class="text-center">${produto.id}</td>	
+					<td class="text-center"><a href="${s:mvcUrl('PC#detalhe').arg(0,produto.id).build()}">${produto.titulo}</a></td>	
+					<td class="text-center">${produto.descricao}</td>		
+					<td class="text-center">${produto.paginas}</td>	
+					<td class="text-center"><fmt:formatDate pattern="dd/MM/yyyy" value="${produto.dataLancamento.time}"/></td>	
 				</tr>
 			</c:forEach>
 		</table>
 	</div>
-	<br>
-	<a href="/casadocodigo">HOME</a>
-	<br>
-	<a href="produtos/form">Cadastrar novo produto</a>
+
 </body>
 </html>
