@@ -7,26 +7,29 @@
 <html>
 <head>
 
-<c:url value="/" var="contextPath" />
+<c:url value="/resources/css" var="contextPath" />
 <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
 <title>Livros de Java, Android, iPhone, Ruby, PHP e muito mais - Casa do Código</title>
 
-<link href="${contextPath}resources/css/cssbase-min.css" rel="stylesheet" type="text/css" media="all" />
+<link href="${contextPath}/bootstrap.min.css" rel="stylesheet"/>
+<link href="${contextPath}/bootstrap-theme.min.css" rel="stylesheet"/>
+<link href="${contextPath}/cssbase-min.css" rel="stylesheet" type="text/css" media="all" />
 <link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' />
-<link href="${contextPath}resources/css/fonts.css" rel="stylesheet" type="text/css" media="all" />
-<link href="${contextPath}resources/css/fontello-ie7.css" rel="stylesheet" type="text/css" media="all" />
-<link href="${contextPath}resources/css/fontello-embedded.css" rel="stylesheet" type="text/css" media="all" />
-<link href="${contextPath}resources/css/fontello.css" rel="stylesheet" type="text/css" media="all" />
-<link href="${contextPath}resources/css/style.css" rel="stylesheet" type="text/css" media="all" />
-<link href="${contextPath}resources/css/layout-colors.css" rel="stylesheet" type="text/css" media="all" />
-<link href="${contextPath}resources/css/responsive-style.css" rel="stylesheet" type="text/css" media="all" />
-<link href="${contextPath}resources/css/guia-do-programador-style.css" rel="stylesheet" type="text/css" media="all" />
-<link href="${contextPath}resources/css/produtos.css" rel="stylesheet" type="text/css" media="all" />
+<link href="${contextPath}/fonts.css" rel="stylesheet" type="text/css" media="all" />
+<link href="${contextPath}/fontello-ie7.css" rel="stylesheet" type="text/css" media="all" />
+<link href="${contextPath}/fontello-embedded.css" rel="stylesheet" type="text/css" media="all" />
+<link href="${contextPath}/fontello.css" rel="stylesheet" type="text/css" media="all" />
+<link href="${contextPath}/style.css" rel="stylesheet" type="text/css" media="all" />
+<link href="${contextPath}/layout-colors.css" rel="stylesheet" type="text/css" media="all" />
+<link href="${contextPath}/responsive-style.css" rel="stylesheet" type="text/css" media="all" />
+<link href="${contextPath}/guia-do-programador-style.css" rel="stylesheet" type="text/css" media="all" />
+<link href="${contextPath}/produtos.css" rel="stylesheet" type="text/css" media="all" />
 <link rel="canonical" href="http://www.casadocodigo.com.br/" />
 
+<script src="resources/js/bootstrap.min.js"></script>
 </head>
 <body>
 
@@ -54,29 +57,29 @@
 	
 	<h1>Lista de Produtos</h1>
 	<br>
-	<div style="font-size: 30px; color: green;">${sucesso}</div>
-	<div style="font-size: 30px; color: red;">${falha}</div>
+	<div class="container" style="font-size: 30px; color: green;">${sucesso}</div>
+	<div class="container" style="font-size: 30px; color: red;">${falha}</div>
 	<br>
-	<table>
-		<tr>
-			<td>ID do Livro</td>
-			<td>Título</td>
-			<td>Descrição</td>
-			<td>Páginas</td>
-			<td>Data de Lançamento</td>
-		</tr>
-		<c:forEach items="${produtos}" var="produto">
+	<div class="container">
+		<table class="text-justify, table table-bordered table-striped table-hover">
 			<tr>
-				<td>${produto.id}</td>	
-				<td>
-					<a href="${s:mvcUrl('PC#detalhe').arg(0,produto.id).build()}">${produto.titulo}</a>
-				</td>	
-				<td>${produto.descricao}</td>		
-				<td>${produto.paginas}</td>	
-				<td><fmt:formatDate pattern="dd/MM/yyyy" value="${produto.dataLancamento.time}"/></td>	
+				<td>ID do Livro</td>
+				<td>Título</td>
+				<td>Descrição</td>
+				<td>Páginas</td>
+				<td>Data de Lançamento</td>
 			</tr>
-		</c:forEach>
-	</table>
+			<c:forEach items="${produtos}" var="produto">
+				<tr>
+					<td>${produto.id}</td>	
+					<td><a href="${s:mvcUrl('PC#detalhe').arg(0,produto.id).build()}">${produto.titulo}</a></td>	
+					<td>${produto.descricao}</td>		
+					<td>${produto.paginas}</td>	
+					<td><fmt:formatDate pattern="dd/MM/yyyy" value="${produto.dataLancamento.time}"/></td>	
+				</tr>
+			</c:forEach>
+		</table>
+	</div>
 	<br>
 	<a href="/casadocodigo">HOME</a>
 	<br>
