@@ -79,5 +79,11 @@ Dependências de conversão para objeto da classe DadosPagamento em JSON - Aula 
 Dependências para uso de cache do google 'guava'
   - guava - 18.0
   - spring-context-support - 4.1.0.RELEASE
+  
+ Dependências de segurança do Spring Security para níveis de poder e acesso de usuários
+  - spring-security-config - 4.0.0.RELEASE
+  - spring-security-taglibs - 4.0.0.RELEASE
+  - spring-security-web - 4.0.0.RELEASE
+  - spring-security-core - 4.0.0.RELEASE
 ***          
 
