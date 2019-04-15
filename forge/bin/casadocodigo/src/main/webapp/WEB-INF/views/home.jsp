@@ -53,7 +53,7 @@
 	        </li>
 	        </security:authorize>
 	      </ul>
-	    </div><!-- /.navbar-collapse -->
+	    </div>
 	  </div>
 	</nav>
 
