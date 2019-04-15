@@ -37,7 +37,7 @@
 	      <ul class="nav navbar-nav">
 	      	<li>home</li>
 	      	
-	      	<security:authorize access="hasRole('ROLE_ADMIN')">
+	      	<security:authorize access="hasAnyRole('ROLE_ADMIN')">
 		        <li><a href="${s:mvcUrl('PC#listar').build()}">Lista de Produtos</a></li>
 		        <li><a href="${s:mvcUrl('PC#form').build()}">Cadastro de Produtos</a></li>
 	        </security:authorize>
