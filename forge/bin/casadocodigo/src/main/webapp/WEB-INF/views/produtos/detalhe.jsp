@@ -74,8 +74,8 @@
 						</li>
 					</c:forEach>
 				</ul>
-				<button type="submit" class="submit-image icon-basket-alt"
-					title="Compre Agora '${produto.titulo}'!"></button>
+				<button type="submit" class="btn btn-primary"
+					title="Compre Agora '${produto.titulo}'!">Compre Agora</button>
 			</form>
 		</section>
 
