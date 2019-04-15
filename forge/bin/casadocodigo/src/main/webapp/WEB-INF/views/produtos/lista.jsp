@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="s" %>
+<%@ taglib uri="http://www.springframework.org/security/tags" prefix="security" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 
 <!DOCTYPE html>
@@ -41,7 +42,13 @@
 	        <li><a href="${s:mvcUrl('PC#form').build()}">Cadastro de Produtos</a></li>
 	      </ul>
 	      <ul class="nav navbar-nav navbar-right">
-	        <li ><a href="${s:mvcUrl('CCC#itens').build()}" rel="nofollow">Seu Carrinho (${carrinhoCompras.quantidade})</a></li>
+	        <li><a href="${s:mvcUrl('CCC#itens').build()}" rel="nofollow">Seu Carrinho (${carrinhoCompras.quantidade})</a></li>
+	        <li>
+	        	<a href="#">
+	        		<security:authentication property="principal" var="usuario"/>
+	        		Usuário: ${usuario.nome}
+	        	</a>
+	        </li>
 	      </ul>
 	    </div><!-- /.navbar-collapse -->
 	  </div>
