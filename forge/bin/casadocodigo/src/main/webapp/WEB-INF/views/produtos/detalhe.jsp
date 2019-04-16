@@ -55,6 +55,9 @@
 	        	<li><a href="/casadocodigo/logout">Sair</a></li>
 	        </li>
 	        </security:authorize>
+	        <security:authorize access="isAnonymous()">
+				<li><a href="login">Login</a></li>	        
+	        </security:authorize>
 	      </ul>
 	    </div>
 	  </div>
