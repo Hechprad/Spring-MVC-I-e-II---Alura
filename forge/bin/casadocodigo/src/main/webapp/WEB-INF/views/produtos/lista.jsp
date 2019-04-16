@@ -49,6 +49,7 @@
 	        		Usuário: ${usuario.nome}
 	        	</a>
 	        </li>
+	        <li><a href="logout">Sair</a></li>
 	      </ul>
 	    </div><!-- /.navbar-collapse -->
 	  </div>

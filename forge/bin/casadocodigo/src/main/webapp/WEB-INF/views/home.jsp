@@ -50,6 +50,7 @@
 	        		<security:authentication property="principal" var="usuario"/>
 	        		Usuário: ${usuario.nome}
 	        	</a>
+	        	<li><a href="logout">Sair</a></li>
 	        </li>
 	        </security:authorize>
 	      </ul>

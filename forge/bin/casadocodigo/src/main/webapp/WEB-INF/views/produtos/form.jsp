@@ -2,6 +2,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="s" %>
+<%@ taglib uri="http://www.springframework.org/security/tags" prefix="security" %>
 
 <!DOCTYPE html>
 <html>
@@ -41,6 +42,13 @@
 	      </ul>
 	      <ul class="nav navbar-nav navbar-right">
 	        <li ><a href="${s:mvcUrl('CCC#itens').build()}" rel="nofollow">Seu Carrinho (${carrinhoCompras.quantidade})</a></li>
+	        <li>
+	        	<a href="#">
+	        		<security:authentication property="principal" var="usuario"/>
+	        		Usuário: ${usuario.nome}
+	        	</a>
+	        </li>
+	        <li><a href="/casadocodigo/logout">Sair</a></li>
 	      </ul>
 	    </div><!-- /.navbar-collapse -->
 	  </div>
