@@ -7,6 +7,7 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.config.annotation.web.servlet.configuration.EnableWebMvcSecurity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 import br.com.casadocodigo.loja.daos.UsuarioDAO;
 
@@ -28,7 +29,8 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter{
 		    .antMatchers("/produtos/**").permitAll()
 		    .antMatchers("/").permitAll()
 		    .anyRequest().authenticated()
-		    .and().formLogin();
+		    .and().formLogin().loginPage("/login").permitAll();
+			//.and().logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout")).logoutSuccessUrl("/login");
 	}
 	
 	@Override
