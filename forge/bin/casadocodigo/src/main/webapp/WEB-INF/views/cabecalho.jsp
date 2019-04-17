@@ -53,10 +53,10 @@
 	        		Usuário: ${usuario.nome}
 	        	</a>
 	        </li>
-	        	<li><a href="/casadocodigo/logout">Sair</a></li>
+	        <li><a href="/casadocodigo/logout">Sair</a></li>
 	        </security:authorize>
 	        <security:authorize access="isAnonymous()">
-				<li><a href="/casadocodigo/login">Login</a></li>	        
+			<li><a href="${s:mvcUrl('LC#loginForm').build()}">Login</a></li>	        
 	        </security:authorize>
 	      </ul>
 	    </div>
