@@ -29,11 +29,11 @@
 		
 		<table style="width: 100%;table-layout:fixed;" class="table table-bordered table-striped table-hover">
 			<tr>
-				<th style="width: 50px;" colspan="1" class="text-center">ID do Livro</th>
-				<th style="width: 100px;" colspan="1"class="text-center">Título</th>
-				<th style="width: 300px;" colspan="1"class="text-center">Descrição</th>
-				<th style="width: 50px;" colspan="1"class="text-center">Páginas</th>
-				<th style="width: 50px;" colspan="1"class="text-center">Data de Lançamento</th>
+				<th style="width: 50px; table-layout:fixed;" colspan="1" class="text-center">ID do Livro</th>
+				<th style="width: 100px; table-layout:fixed;" colspan="1"class="text-center">Título</th>
+				<th style="width: 300px; table-layout:fixed;" colspan="1"class="text-center">Descrição</th>
+				<th style="width: 70px; table-layout:fixed;" colspan="1"class="text-center">Páginas</th>
+				<th style="width: 100px; table-layout:fixed;" colspan="1"class="text-center">Data de Lançamento</th>
 			</tr>
 			<c:forEach items="${produtos}" var="produto">
 				<tr>
