@@ -9,6 +9,7 @@
 	<section class="container middle">
 		<h2 id="cart-title">Seu carrinho de compras</h2>
 		<table id="cart-table" style="width: 100%;table-layout:fixed;" class="table table-bordered table-striped">
+			<c:if test="${carrinhoCompras.quantidade > 0}">
 			<thead>
 				<tr>
 					<th>Item</th>
@@ -41,7 +42,7 @@
 					</tr>
 				</c:forEach> <!-- FIM DO c:forEach -->
 			</tbody>
-			<c:if test="${carrinhoCompras.quantidade > 0}">
+			
 			<tfoot>
 				<tr>
 					<td style="text-align: center; vertical-align: middle;">
@@ -56,13 +57,11 @@
 			</tfoot>
 			</c:if>
 			<c:if test="${carrinhoCompras.quantidade <= 0}">
-			<tfoot>
-				<tr>
-					<td colspan="5" style="text-align: center; vertical-align: middle;">
-						<p style="font-size: 25px;"><b>Carrinho vazio</b></p>
-					</td>
-				</tr>
-			</tfoot>
+			<tr>
+				<td colspan="5" style="text-align: center; vertical-align: middle;">
+					<p style="font-size: 25px;"><b>Carrinho vazio</b></p>
+				</td>
+			</tr>
 			</c:if>
 		</table>
 	</section>
