@@ -37,17 +37,24 @@
 					</c:forEach>
 				</ul>
 				<button type="submit" class="btn btn-primary"
-					title="Compre Agora '${produto.titulo}'!">Compre Agora</button>
+					title="Compre Agora '${produto.titulo}'!"><fmt:message key="detalhe.compre_agora"/></button>
 			</form:form>
 		</section>
 
 		<div class="container">
 			<section class="data product-detail">
-				<h2 class="section-title">Dados do livro:</h2>
-				<p>Número de páginas: 
-					<span>${produto.paginas}</span>
+				<h2 class="section-title">
+					<fmt:message key="detalhe.dados_do_livro"/>
+				</h2>
+				<p>
+				<fmt:message key="detalhe.numero_de_paginas">
+					<fmt:param value="${produto.paginas}"/>
+				</fmt:message>
 				</p>
-				<p>Data de publicação: <fmt:formatDate pattern="dd/MM/yyyy" value="${produto.dataLancamento.time}"/></p>
+				<p>
+					<fmt:message key="detalhe.data_de_publicacao"/>
+					<fmt:formatDate pattern="dd/MM/yyyy" value="${produto.dataLancamento.time}"/>
+				</p>
 			</section>
 		</div>
 	</article>

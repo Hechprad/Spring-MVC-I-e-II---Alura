@@ -1,13 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="s" %>
 <%@ taglib uri="http://www.springframework.org/security/tags" prefix="security" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <%@ taglib  tagdir="/WEB-INF/tags" prefix="tags"%>
 
 <tags:pageTemplate titulo="Lista de Livros">
 	<div class="container" >
-		<h1 class="text-center" style="font-size: 30px">Lista de Livros</h1>
+		<h1 class="text-center" style="font-size: 30px"><fmt:message key="lista.subtitulo"/></h1>
 			
 			<!-- alertas de mensagem após cadastro de livro -->
 			<c:if test="${sucesso != null}"> 
@@ -29,11 +29,11 @@
 		
 		<table style="width: 100%;table-layout:fixed;" class="table table-bordered table-striped table-hover">
 			<tr>
-				<th style="width: 50px; table-layout:fixed;" colspan="1" class="text-center">ID do Livro</th>
-				<th style="width: 100px; table-layout:fixed;" colspan="1"class="text-center">Título</th>
-				<th style="width: 300px; table-layout:fixed;" colspan="1"class="text-center">Descrição</th>
-				<th style="width: 70px; table-layout:fixed;" colspan="1"class="text-center">Páginas</th>
-				<th style="width: 100px; table-layout:fixed;" colspan="1"class="text-center">Data de Lançamento</th>
+				<th style="width: 50px; table-layout:fixed;" colspan="1" class="text-center"><fmt:message key="lista.id_do_livro"/></th>
+				<th style="width: 100px; table-layout:fixed;" colspan="1"class="text-center"><fmt:message key="lista.titulo"/></th>
+				<th style="width: 300px; table-layout:fixed;" colspan="1"class="text-center"><fmt:message key="lista.descricao"/></th>
+				<th style="width: 70px; table-layout:fixed;" colspan="1"class="text-center"><fmt:message key="lista.paginas"/></th>
+				<th style="width: 100px; table-layout:fixed;" colspan="1"class="text-center"><fmt:message key="lista.data_de_publicacao"/></th>
 			</tr>
 			<c:forEach items="${produtos}" var="produto">
 				<tr>
