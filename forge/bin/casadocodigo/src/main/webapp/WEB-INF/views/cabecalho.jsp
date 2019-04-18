@@ -27,9 +27,8 @@
       <ul class="nav navbar-nav navbar-right">
         <li >
         	<a href="${s:mvcUrl('CCC#itens').build()}" rel="nofollow">
-        		<fmt:message key="menu.carrinho">
-        			<fmt:param value="${carrinhoCompras.quantidade}"/>
-        		</fmt:message>
+        		<!-- s:message ou fmt:message funcionam da mesma maneira, a 's' spring e mais espertona -->
+        		<s:message code="menu.carrinho" arguments="${carrinhoCompras.quantidade}"/>
         	</a>
         </li>
         <security:authorize access="hasRole('ROLE_ADMIN')">
@@ -42,8 +41,15 @@
         <li><a href="/casadocodigo/logout"><fmt:message key="menu.sair"/></a></li>
         </security:authorize>
         <security:authorize access="isAnonymous()">
-		<li><a href="${s:mvcUrl('LC#loginForm').build()}">Login</a></li>	        
+		<li><a href="${s:mvcUrl('LC#loginForm').build()}"><s:message code="menu.login"/></a></li>	        
         </security:authorize>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><s:message code="menu.idioma"/> <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="?locale=pt_BR"><s:message code="menu.pt"/></a></li>
+            <li><a href="?locale=en_US"><s:message code="menu.en"/></a></li>
+          </ul>
+        </li>
       </ul>
     </div>
   </div>
