@@ -4,8 +4,9 @@
 <%@ taglib uri="http://www.springframework.org/tags" prefix="s"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib uri="http://www.springframework.org/security/tags" prefix="security" %>
+<%@ taglib tagdir="/WEB-INF/tags" prefix="tags" %>
 
-<%@include file="/WEB-INF/views/cabecalho.jsp" %>
+<tags:pageTemplate titulo="Livros de Java, Android, iOS, Mobile e muito mais!">
 
 	<article id="${produto.id}">
 		<header id="product-highlight" class="clearfix">
@@ -41,14 +42,6 @@
 		</section>
 
 		<div class="container">
-			<section class="summary">
-				<ul>
-					<li>
-						<h3>E muito mais... <a href='/pages/sumario-java8'>veja o sumário</a>.</h3>
-					</li>
-				</ul>
-			</section>
-
 			<section class="data product-detail">
 				<h2 class="section-title">Dados do livro:</h2>
 				<p>Número de páginas: 
@@ -59,5 +52,4 @@
 		</div>
 	</article>
 
-</body>
-</html>
+</tags:pageTemplate>

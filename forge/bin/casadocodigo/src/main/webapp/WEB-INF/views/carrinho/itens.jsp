@@ -3,6 +3,9 @@
 <%@ taglib uri="http://www.springframework.org/tags" prefix="s"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <%@ taglib uri="http://www.springframework.org/security/tags" prefix="security"%>
+<%@ taglib tagdir="/WEB-INF/tags" prefix="tags" %>
+
+<tags:pageTemplate titulo="Seu carrinho de compras">
 
 <%@include file="/WEB-INF/views/cabecalho.jsp" %>
 
@@ -33,7 +36,7 @@
 							</td>
 						<td class="numeric-cell" style="text-align: center; vertical-align: middle;">${carrinhoCompras.getTotal(item)} reais</td>
 						<td class="remove-item" style="text-align: center; vertical-align: middle;">
-							<form:form servletRelativeAction="${s:mvcUrl('CCC#remover').arg(0,item.produto.id).arg(1,item.tipoPreco).build()}" method="POST">
+							<form:form action="${s:mvcUrl('CCC#remover').arg(0,item.produto.id).arg(1,item.tipoPreco).build()}" method="POST">
 								<button type="submit" class="btn btn-default" title="Excluir">
   									<span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
 								</button>
@@ -46,7 +49,7 @@
 			<tfoot>
 				<tr>
 					<td style="text-align: center; vertical-align: middle;">
-						<form:form servletRelativeAction="${s:mvcUrl('PC#finalizar').build()}" method="POST">
+						<form:form action="${s:mvcUrl('PC#finalizar').build()}" method="POST">
 							<button type="submit" class="btn btn-primary" name="checkout" value="Finalizar compra">Finalizar Compra</button>
 						</form:form>
 					</td>
@@ -62,11 +65,10 @@
 					<p style="font-size: 25px;"><b>Carrinho vazio</b></p>
 				</td>
 			</tr>
+			<br/>
 			</c:if>
 		</table>
 	</section>
-</body>
-
-<%@include file="/WEB-INF/views/rodape.jsp" %>
-
-</html>
+	<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+	<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+</tags:pageTemplate>

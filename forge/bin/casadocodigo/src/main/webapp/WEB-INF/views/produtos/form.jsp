@@ -3,11 +3,12 @@
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="s" %>
 <%@ taglib uri="http://www.springframework.org/security/tags" prefix="security" %>
+<%@ taglib tagdir="/WEB-INF/tags" prefix="tags" %>
 
-<%@include file="/WEB-INF/views/cabecalho.jsp" %>
+<tags:pageTemplate titulo="Cadastro de Livros">
 
 <div class="container">
-	<h1 class="text-center">Cadastro de Produto</h1>
+	<h1 class="text-center">Cadastro de Livros</h1>
 	<!-- action="${s:mvcUrl('PC#gravar').build()}" pega o método gravar do ProdutoController -->
 	<form:form action="${s:mvcUrl('PC#gravar').build()}" method="POST" 
 			commandName="produto" enctype="multipart/form-data">
@@ -43,8 +44,8 @@
 			<input name="sumario" type="file" class="form-control">
 		</div>
 		<br>
-		<button type="submit" class="btn btn-primary">Cadastrar</button><br>
+		<button type="submit" class="btn btn-primary">Cadastrar</button>
+		<br><br><br>
 	</form:form>
 </div>
-</body>
-</html>
+</tags:pageTemplate>

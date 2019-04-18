@@ -3,11 +3,11 @@
 <%@ taglib uri="http://www.springframework.org/tags" prefix="s" %>
 <%@ taglib uri="http://www.springframework.org/security/tags" prefix="security" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<%@ taglib  tagdir="/WEB-INF/tags" prefix="tags"%>
 
-<%@include file="/WEB-INF/views/cabecalho.jsp" %>
-	
+<tags:pageTemplate titulo="Lista de Livros">
 	<div class="container" >
-		<h1 class="text-center" style="font-size: 30px">Lista de Produtos</h1>
+		<h1 class="text-center" style="font-size: 30px">Lista de Livros</h1>
 			
 			<!-- alertas de mensagem após cadastro de livro -->
 			<c:if test="${sucesso != null}"> 
@@ -46,9 +46,5 @@
 			</c:forEach>
 		</table>
 	</div>
-
-</body>
-
-<%@include file="/WEB-INF/views/rodape.jsp" %>
-
-</html>
+	<br/><br/>
+</tags:pageTemplate>
