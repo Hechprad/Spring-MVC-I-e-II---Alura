@@ -25,7 +25,13 @@
         </security:authorize>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li ><a href="${s:mvcUrl('CCC#itens').build()}" rel="nofollow"><fmt:message key="menu.carrinho"/>(${carrinhoCompras.quantidade})</a></li>
+        <li >
+        	<a href="${s:mvcUrl('CCC#itens').build()}" rel="nofollow">
+        		<fmt:message key="menu.carrinho">
+        			<fmt:param value="${carrinhoCompras.quantidade}"/>
+        		</fmt:message>
+        	</a>
+        </li>
         <security:authorize access="hasRole('ROLE_ADMIN')">
         <li>
         	<a href="#">
