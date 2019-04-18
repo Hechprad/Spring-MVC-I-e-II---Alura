@@ -6,7 +6,7 @@
 <%@ taglib uri="http://www.springframework.org/security/tags" prefix="security" %>
 <%@ taglib tagdir="/WEB-INF/tags" prefix="tags" %>
 
-<tags:pageTemplate titulo="Livros de Java, Android, iOS, Mobile e muito mais!">
+<tags:pageTemplate titulo="${produto.titulo}">
 
 	<article id="${produto.id}">
 		<header id="product-highlight" class="clearfix">

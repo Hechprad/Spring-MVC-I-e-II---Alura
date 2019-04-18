@@ -7,8 +7,13 @@
 
 <tags:pageTemplate titulo="Seu carrinho de compras">
 
-<%@include file="/WEB-INF/views/cabecalho.jsp" %>
+<jsp:attribute name="extraScripts">
+	<script>
+		console.log("Finalização de compra de ${carrinhoCompras.quantidade} itens");
+	</script>
+</jsp:attribute>
 
+<jsp:body>
 	<section class="container middle">
 		<h2 id="cart-title">Seu carrinho de compras</h2>
 		<table id="cart-table" style="width: 100%;table-layout:fixed;" class="table table-bordered table-striped">
@@ -71,4 +76,5 @@
 	</section>
 	<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
 	<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+</jsp:body>
 </tags:pageTemplate>

@@ -3,6 +3,7 @@
 <%@ attribute name="titulo" required="true"%>
 <%@ attribute name="bodyClass" required="false"%>
 <%@ attribute name="fixedFooter" required="false"%>
+<%@ attribute name="extraScripts" fragment="true"%>
 
 <!DOCTYPE html>
 <html>
@@ -24,14 +25,20 @@
 
 </head>
 
-<%@include file="/WEB-INF/views/cabecalho.jsp"%>
-
 <body class="${bodyClass}">
+
+<%@include file="/WEB-INF/views/cabecalho.jsp"%>
 
 <jsp:doBody/>
 
-</body>
+<jsp:invoke fragment="extraScripts"></jsp:invoke>
 
 <%@include file="/WEB-INF/views/rodape.jsp"%>
+	
+<script>
+	console.log("Script padrão de todas as páginas é colocado aqui!");
+</script>
+
+</body>
 
 </html>
