@@ -18,7 +18,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="${jp}/bootstrap.min.js"></script>
 <style>
-	body{padding-top:90px; padding-bottom: 50px;}
+	body{padding-top:90px;}
 </style>
 
 </head>

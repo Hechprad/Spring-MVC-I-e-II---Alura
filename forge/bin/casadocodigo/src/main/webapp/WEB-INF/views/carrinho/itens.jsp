@@ -66,4 +66,7 @@
 		</table>
 	</section>
 </body>
+
+<%@include file="/WEB-INF/views/rodape.jsp" %>
+
 </html>
