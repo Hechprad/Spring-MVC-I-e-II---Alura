@@ -60,7 +60,7 @@ public class AppWebConfiguration extends WebMvcConfigurerAdapter {
 	public MessageSource messageSource() {
 		ReloadableResourceBundleMessageSource messageSource 
 			= new ReloadableResourceBundleMessageSource();
-		messageSource.setBasename("WEB-INF/message");
+		messageSource.setBasename("WEB-INF/messages");
 		messageSource.setDefaultEncoding("UTF-8");
 		messageSource.setCacheSeconds(1);
 		
