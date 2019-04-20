@@ -97,5 +97,10 @@ Dependências para uso de cache do google 'guava'
 	</repository>
 </repositories>
 ```
+ Dependência JUnit para a realização de tests na aplicação
+  - <artifactId>junit - 4.12
+  	```sh
+  	<scope>test</scope>
+  	```
 ***          
 
