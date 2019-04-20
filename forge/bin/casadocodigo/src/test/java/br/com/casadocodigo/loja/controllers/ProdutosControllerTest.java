@@ -45,4 +45,9 @@ public class ProdutosControllerTest {
 		
 	}
 	
+	@Test
+	public void somenteAdminDeveAcessarProdutosForm() {
+		
+	}
+	
 }
