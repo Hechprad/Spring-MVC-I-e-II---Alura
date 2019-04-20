@@ -106,5 +106,9 @@ Dependências para uso de cache do google 'guava'
   	```sh
   	<scope>test</scope>
   	```
+  - spring-security-test - 4.0.0.RELEASE
+  	```sh
+  	<scope>test</scope>
+  	```
 ***          
 
