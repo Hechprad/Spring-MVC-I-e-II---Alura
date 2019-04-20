@@ -47,6 +47,7 @@ public class ServletSpringMVC extends AbstractAnnotationConfigDispatcherServletI
 		registration.setMultipartConfig(new MultipartConfigElement(""));
 	}
 	
+	//definindo profile da aplicação 'dev'
 	@Override
 	public void onStartup(ServletContext servletContext) throws ServletException {
 	    super.onStartup(servletContext);
