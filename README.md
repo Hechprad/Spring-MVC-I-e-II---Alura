@@ -97,8 +97,12 @@ Dependências para uso de cache do google 'guava'
 	</repository>
 </repositories>
 ```
- Dependência JUnit para a realização de tests na aplicação
-  - <artifactId>junit - 4.12
+ Dependências para a realização de testes na aplicação
+  - junit - 4.12
+  	```sh
+  	<scope>test</scope>
+  	```
+  - spring-test - 4.1.0.RELEASE
   	```sh
   	<scope>test</scope>
   	```
