@@ -4,8 +4,16 @@ import java.math.BigDecimal;
 import java.util.List;
 
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.context.ActiveProfiles;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.transaction.annotation.Transactional;
 
 import br.com.casadocodigo.loja.builders.ProdutoBuilder;
+import br.com.casadocodigo.loja.conf.DataSourceConfigurationTest;
+import br.com.casadocodigo.loja.conf.JPAConfiguration;
 import br.com.casadocodigo.loja.models.Produto;
 import br.com.casadocodigo.loja.models.TipoPreco;
 import junit.framework.Assert;
@@ -14,12 +22,19 @@ import junit.framework.Assert;
  * @author Hech
  *
  */
+
+@RunWith(SpringJUnit4ClassRunner.class)
+@ContextConfiguration(classes= {JPAConfiguration.class, 
+		ProdutoDAO.class, DataSourceConfigurationTest.class})
+@ActiveProfiles("test")
 public class ProdutoDAOTest {
 
+	@Autowired
+	private ProdutoDAO produtoDao;
+	
 	@Test
+	@Transactional
 	public void deveSomarTodosPrecosPorTipoLivro() {
-		ProdutoDAO produtoDAO = new ProdutoDAO();
-		
 		List<Produto> livrosImpressos = ProdutoBuilder
 				.newProduto(TipoPreco.IMPRESSO, BigDecimal.TEN)
 				.more(3).buildAll();
@@ -30,18 +45,18 @@ public class ProdutoDAOTest {
 				.newProduto(TipoPreco.COMBO, BigDecimal.TEN)
 				.more(3).buildAll();
 		
-		livrosImpressos.stream().forEach(produtoDAO::gravar);
-		livrosEbooks.stream().forEach(produtoDAO::gravar);
-		livrosCombo.stream().forEach(produtoDAO::gravar);
+		livrosImpressos.stream().forEach(produtoDao::gravar);
+		livrosEbooks.stream().forEach(produtoDao::gravar);
+		livrosCombo.stream().forEach(produtoDao::gravar);
 		
 		
-		BigDecimal valor1 = produtoDAO.somaPrecosPorTipo(TipoPreco.IMPRESSO);
+		BigDecimal valor1 = produtoDao.somaPrecosPorTipo(TipoPreco.IMPRESSO);
 		Assert.assertEquals(new BigDecimal(40).setScale(2), valor1);
 		
-		BigDecimal valor2 = produtoDAO.somaPrecosPorTipo(TipoPreco.EBOOK);
+		BigDecimal valor2 = produtoDao.somaPrecosPorTipo(TipoPreco.EBOOK);
 		Assert.assertEquals(new BigDecimal(40).setScale(2), valor2);
 		
-		BigDecimal valor3 = produtoDAO.somaPrecosPorTipo(TipoPreco.COMBO);
+		BigDecimal valor3 = produtoDao.somaPrecosPorTipo(TipoPreco.COMBO);
 		Assert.assertEquals(new BigDecimal(40).setScale(2), valor3);
 		
 		
