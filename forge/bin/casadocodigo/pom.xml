@@ -195,7 +195,7 @@
 			<version>4.0.0.M2</version>
 		</dependency>
 
-		<!-- Dependência JUnit para realização de testes TDD -->
+		<!-- Dependências para realização de testes -->
 
 		<!-- https://mvnrepository.com/artifact/junit/junit -->
 		<dependency>
@@ -204,6 +204,14 @@
 			<version>4.12</version>
 			<scope>test</scope>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.springframework/spring-test -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId>
+			<version>4.1.0.RELEASE</version>
+			<scope>test</scope>
+		</dependency>
+
 
 
 	</dependencies>

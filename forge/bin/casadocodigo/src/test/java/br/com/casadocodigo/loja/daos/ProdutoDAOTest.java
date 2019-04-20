@@ -3,11 +3,12 @@ package br.com.casadocodigo.loja.daos;
 import java.math.BigDecimal;
 import java.util.List;
 
-import org.springframework.util.Assert;
+import org.junit.Test;
 
 import br.com.casadocodigo.loja.builders.ProdutoBuilder;
 import br.com.casadocodigo.loja.models.Produto;
 import br.com.casadocodigo.loja.models.TipoPreco;
+import junit.framework.Assert;
 /**
  * Classe de teste para gerear o relatório no somaPrecosPorTipo
  * @author Hech
@@ -15,6 +16,7 @@ import br.com.casadocodigo.loja.models.TipoPreco;
  */
 public class ProdutoDAOTest {
 
+	@Test
 	public void deveSomarTodosPrecosPorTipoLivro() {
 		ProdutoDAO produtoDAO = new ProdutoDAO();
 		
@@ -34,10 +36,13 @@ public class ProdutoDAOTest {
 		
 		
 		BigDecimal valor1 = produtoDAO.somaPrecosPorTipo(TipoPreco.IMPRESSO);
-		Assert.equals();
+		Assert.assertEquals(new BigDecimal(40).setScale(2), valor1);
+		
 		BigDecimal valor2 = produtoDAO.somaPrecosPorTipo(TipoPreco.EBOOK);
+		Assert.assertEquals(new BigDecimal(40).setScale(2), valor2);
 		
 		BigDecimal valor3 = produtoDAO.somaPrecosPorTipo(TipoPreco.COMBO);
+		Assert.assertEquals(new BigDecimal(40).setScale(2), valor3);
 		
 		
 	}
