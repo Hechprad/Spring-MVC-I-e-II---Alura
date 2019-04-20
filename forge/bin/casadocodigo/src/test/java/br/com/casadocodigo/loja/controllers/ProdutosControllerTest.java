@@ -47,7 +47,8 @@ public class ProdutosControllerTest {
 	
 	@Test
 	public void somenteAdminDeveAcessarProdutosForm() {
-		
+		mockMvc.perform(MockMvcRequestBuilders.get("/produtos/form")
+				.with(SecurityMockMvcRequestPostProcessor))
 	}
 	
 }
