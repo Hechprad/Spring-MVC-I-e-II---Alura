@@ -114,5 +114,8 @@ Dependências para uso de cache do google 'guava'
 
  Dependência para envio de e-mail pela aplicação
   - mail - 1.4.7
+ 
+ Dependência para o banco PostgreSQL
+  - postgresql - 9.4-1201-jdbc41
 ***          
 
