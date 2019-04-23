@@ -24,6 +24,6 @@ public class Preco {
 	}
 	
 	public String toString() {
-		return "Valor: " + valor + " - Tipo: " + tipo;
+		return "Tipo: " + this.tipo.name() +" Valor: " + this.valor;
 	};
 }

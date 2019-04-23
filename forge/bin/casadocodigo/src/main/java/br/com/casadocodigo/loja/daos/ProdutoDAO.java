@@ -29,8 +29,14 @@ public class ProdutoDAO {
 	}
 
 	public List<Produto> listar() {
-		return manager.createQuery("select p from Produto p", Produto.class)
+		return manager.createQuery("select distinct(p) from Produto p join fetch p.precos", Produto.class)
 				.getResultList();
+		/**
+		 * "select distinct(p) from Produto p join fetch p.precos"
+		 * 'distinct' faz com que o resultado venha apenas uma vez, e não três ves por ter três tipos de preço
+		 * join fetch faz o carregamento dos preços no momento que vc está fazendo a busca dos produtos.
+		 * consulta no banco de dados que carrega os produtos, para que também carregue junto com estes, seus preços.
+		 */
 	}
 	
 	public Produto find(Integer id) {

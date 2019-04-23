@@ -29,9 +29,10 @@
 		
 		<table style="width: 100%;table-layout:fixed;" class="table table-bordered table-striped table-hover">
 			<tr>
-				<th style="width: 50px; table-layout:fixed;" colspan="1" class="text-center"><fmt:message key="lista.id_do_livro"/></th>
-				<th style="width: 100px; table-layout:fixed;" colspan="1"class="text-center"><fmt:message key="lista.titulo"/></th>
+				<th style="width: 70px; table-layout:fixed;" colspan="1" class="text-center"><fmt:message key="lista.id_do_livro"/></th>
+				<th style="width: 120px; table-layout:fixed;" colspan="1"class="text-center"><fmt:message key="lista.titulo"/></th>
 				<th style="width: 300px; table-layout:fixed;" colspan="1"class="text-center"><fmt:message key="lista.descricao"/></th>
+				<th style="width: 120px; table-layout:fixed;" colspan="1"class="text-center"><s:message code="lista.preco"/> </th>
 				<th style="width: 70px; table-layout:fixed;" colspan="1"class="text-center"><fmt:message key="lista.paginas"/></th>
 				<th style="width: 100px; table-layout:fixed;" colspan="1"class="text-center"><fmt:message key="lista.data_de_publicacao"/></th>
 			</tr>
@@ -39,7 +40,12 @@
 				<tr>
 					<td class="text-center">${produto.id}</td>	
 					<td class="text-center"><a href="${s:mvcUrl('PC#detalhe').arg(0,produto.id).build()}">${produto.titulo}</a></td>	
-					<td class="text-center">${produto.descricao}</td>		
+					<td class="text-center">${produto.descricao}</td>
+					<td class="text-left">
+						<c:forEach items="${produto.precos}" var="preco">
+							<p>${preco.tipo}: ${preco.valor}</p>
+						</c:forEach>
+					</td>
 					<td class="text-center">${produto.paginas}</td>	
 					<td class="text-center"><fmt:formatDate pattern="dd/MM/yyyy" value="${produto.dataLancamento.time}"/></td>	
 				</tr>
