@@ -97,6 +97,7 @@ Dependências para uso de cache do google 'guava'
 	</repository>
 </repositories>
 ```
+
  Dependências para a realização de testes na aplicação
   - junit - 4.12
   	```sh
@@ -110,5 +111,8 @@ Dependências para uso de cache do google 'guava'
   	```sh
   	<scope>test</scope>
   	```
+
+ Dependência para envio de e-mail pela aplicação
+  - mail - 1.4.7
 ***          
 
