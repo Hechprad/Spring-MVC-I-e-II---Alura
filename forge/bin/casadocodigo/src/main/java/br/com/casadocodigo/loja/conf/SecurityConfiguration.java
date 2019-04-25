@@ -28,6 +28,9 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter{
 		    .antMatchers(HttpMethod.GET, "/produtos").hasRole("ADMIN")
 		    .antMatchers("/produtos/**").permitAll()
 		    .antMatchers("/").permitAll()
+
+		   //.antMatchers("/url-magica-maluca-asbdjabsdjhsajeruwygeiu232ewmn").permitAll() // apenas para liberar uma chava adm automática no banco do heroku
+
 		    .anyRequest().authenticated()
 		    .and().formLogin().loginPage("/login").permitAll()
 			.and().logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout")).logoutSuccessUrl("/");
