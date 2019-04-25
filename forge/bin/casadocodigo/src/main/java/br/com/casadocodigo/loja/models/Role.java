@@ -12,6 +12,14 @@ public class Role implements GrantedAuthority{
 	
 	@Id
 	private String nome;
+	
+	// métodos que permitem string na classe role para gravar um admin no banco do heroku
+//	public Role() {
+//	}
+//	
+//	public Role(String nome) {
+//		this.nome = nome;
+//	}
 
 	public String getNome() {
 		return nome;
