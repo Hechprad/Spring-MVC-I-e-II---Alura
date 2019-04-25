@@ -36,4 +36,9 @@ public class UsuarioDAO implements UserDetailsService {
 		return usuarios.get(0);
 	}
 
+	// método para gravar no banco do heroku um user admin
+//	public void gravar(Usuario usuario) {
+//		manager.persist(usuario);
+//	}
+
 }
