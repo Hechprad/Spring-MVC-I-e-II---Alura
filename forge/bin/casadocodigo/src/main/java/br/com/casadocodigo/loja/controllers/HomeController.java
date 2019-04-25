@@ -20,6 +20,7 @@ public class HomeController {
 	@Autowired
 	private ProdutoDAO produtoDao;
 	
+	
 	@RequestMapping("/") 	//Mapeamento do request do usuário
 	@Cacheable(value="produtosHome")	//cacheando o método, guardando em memória para aumetar a performance
 	public ModelAndView index() {	//Retorna a página inicial do nosso projeto
@@ -29,7 +30,9 @@ public class HomeController {
 		
 		return modelAndView;
 	}
-			
+
+	
+	
 //	@Autowired
 //	private UsuarioDAO usuarioDao;
 	
@@ -48,4 +51,5 @@ public class HomeController {
 //		
 //		return "Url Mágica Executada";
 //	}
+	
 }
