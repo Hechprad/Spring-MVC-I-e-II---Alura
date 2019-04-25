@@ -24,7 +24,7 @@ public class Usuario implements UserDetails {
 	
 	private String nome;
 	
-	@ManyToMany(fetch=FetchType.EAGER)
+	@ManyToMany(fetch=FetchType.EAGER, cascade=CascadeType.PERSIST) //este cascade permite o cadastro do admin no banco do heroku
 	private List<Role> roles = new ArrayList<Role>();
 	
 	public String getEmail() {
