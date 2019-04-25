@@ -1,8 +1,8 @@
 # 📌Spring-MVC-I-e-II---Alura
 ***
 ## Projeto realizado nos dois cursos de Spring MVC da Alura
-(Site de uma loja de livros)
-Projeto pronto no Heroku - [Casa do código - HECH](https://cdcspringmvc-hech.herokuapp.com/)
+ - Site de uma loja de livros
+ - Projeto pronto no Heroku - [Casa do código - HECH](https://cdcspringmvc-hech.herokuapp.com/)
 ***
 ### Configurações iniciais
 
